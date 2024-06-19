@@ -1,5 +1,6 @@
 <script>
 import { store } from "../store";
+import MainPlayer from "./MainPlayer.vue"
 
 export default {
     data() {
@@ -7,10 +8,15 @@ export default {
             store
         }
     },
+    components: {
+        MainPlayer
+    }
 }
 </script>
 
 <template>
+
+    <MainPlayer/>
 
 </template>
 

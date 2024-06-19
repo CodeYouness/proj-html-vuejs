@@ -1,7 +1,7 @@
-<script setup>
-import AppFooter from './components/AppFooter.vue';
-import AppHeader from './components/AppHeader.vue'
+<script>
+import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
     data() {
