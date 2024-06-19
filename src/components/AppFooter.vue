@@ -3,7 +3,7 @@ export default {
     data() {
         return {
 
-            startedLinks: [
+            getStartedLinks: [
                 {
                     title: 'resources'
                 },
@@ -50,7 +50,7 @@ export default {
                     title: 'stories'
                 },
                 {
-                    title: 'communityt'
+                    title: 'community'
                 },
                 {
                     title: 'blog'
@@ -68,14 +68,42 @@ export default {
 </script>
 
 <template>
-<h1>footer</h1>
+<footer>
+    <div class="wrapper">
+        <section class="links">
+            <p>get started</p>
+            <ul v-for="(link, index) in getStartedLinks" :key="index">
+                <li>{{ link.title }}</li>
+            </ul>
+             
+            <p>about</p>
+            <ul v-for="(link, index) in aboutLinks" :key="index">
+                <li>{{ link.title }}</li>
+            </ul>
+
+            <p>features</p>
+            <ul v-for="(link, index) in featuresLinks" :key="index">
+                <li>{{ link.title }}</li>
+            </ul>
+
+            <p>quick links</p>
+            <ul v-for="(link, index) in quickLinks" :key="index">
+                <li>{{ link.title }}</li>
+            </ul>
+        </section>
+    </div>
+</footer>
 </template>
 
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-h1 {
+* {
+    @include reset;
+}
+
+.wrapper {
     background-color: $primary-color;
 }
 </style>
