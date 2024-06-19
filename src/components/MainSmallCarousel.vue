@@ -10,29 +10,25 @@ export default {
     components: {
         store
     },
-    methods: {
-        getConsoleLog() {
-            console.log(this.store.animeList[0].path)
-        },
+    methods:{
         getImagePath : function (img) {
-                return new URL(img , import.meta.url).href;
-            }
+            return new URL(img , import.meta.url).href;
         }
-    }
+    },
     created() {
-        this.getConsoleLog()
     }
+}
 
 </script>
 
 <template>
     <div class="container-fluid d-flex align-items-center">
         <div class="row overflow-x-auto">
-            <ul class="d-flex flex-nowrap">
+            <div class="d-flex flex-nowrap">
                 <li v-for="pic in store.animeList" :key="pic.id" class="card">
-                    <img :src="" alt="">
+                    <img :src="getImagePath(`.${pic.path}`)" :alt="pic.id">
                 </li>
-            </ul>
+            </div>
         </div>
     </div>
 </template>

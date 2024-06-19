@@ -8,7 +8,7 @@ export const store = reactive({
             "title": "Hygenic Receuoe To Prepare Rice ",
             "date": "December 26 , 2022",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-            "path": "../assets/rice-ball.webp"
+            "path": "./assets/rice-ball.webp"
         },
         {
             "id": 2,
