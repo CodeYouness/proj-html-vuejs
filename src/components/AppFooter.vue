@@ -72,50 +72,50 @@ export default {
     <div class="container">
             <section class="links">
             <nav>    
-            <p>get started</p>
-            <ul v-for="(link, index) in getStartedLinks" :key="index">
-                <li>{{ link.title }}</li>
+            <p class="text-light">get started</p>
+            <ul class="text-light" v-for="(link, index) in getStartedLinks" :key="index">
+                <li class="text-light">{{ link.title }}</li>
             </ul>
             </nav>
              
             <nav>
-            <p>about</p>
-            <ul v-for="(link, index) in aboutLinks" :key="index">
-                <li>{{ link.title }}</li>
+            <p class="text-light">about</p>
+            <ul class="text-light" v-for="(link, index) in aboutLinks" :key="index">
+                <li class="text-light">{{ link.title }}</li>
             </ul>
             </nav>
 
             <nav>
-            <p>features</p>
-            <ul v-for="(link, index) in featuresLinks" :key="index">
-                <li>{{ link.title }}</li>
+            <p class="text-light">features</p>
+            <ul class="text-light" v-for="(link, index) in featuresLinks" :key="index">
+                <li class="text-light">{{ link.title }}</li>
             </ul>
             </nav>
              
             <nav>
-            <p>quick links</p>
-            <ul v-for="(link, index) in quickLinks" :key="index">
-                <li>{{ link.title }}</li>
+            <p class="text-light">quick links</p>
+            <ul class="text-light" v-for="(link, index) in quickLinks" :key="index">
+                <li class="text-light">{{ link.title }}</li>
             </ul>
             </nav>
 
             <div class="d-flex flex-column">
-                <p>subscribe to newsletter</p>
+                <p class="text-light">subscribe to newsletter</p>
                 <input type="email" id="email" placeholder="Email">
-                <button>subscribe</button>
+                <button class="text-light">subscribe</button>
             </div>
             
             </section>
         
             <div class="line">
-                <hr>
+                <hr class="text-light">
             </div>
 
             <section class="d-flex justify-content-between align-items-center">
                 <div class="img-container">
                     <img src="../assets/anime-whitelogo.png" alt="">
                 </div>
-                <p>Anime Tech, Theme by HasnainDEV</p>
+                <p class="text-light">Anime Tech, Theme by HasnainDEV</p>
             </section>
     </div>
 </footer>
