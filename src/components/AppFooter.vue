@@ -2,6 +2,7 @@
 export default {
     data() {
         return {
+
             startedLinks: [
                 {
                     title: 'resources'
@@ -58,6 +59,9 @@ export default {
                     title: 'brand assets'
                 }
             ]
+
+            
+
         }
     }
 }
