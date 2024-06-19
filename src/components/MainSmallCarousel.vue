@@ -24,12 +24,12 @@ export default {
         nextPicCarousel(){
             this.currentArray.shift();
             this.currentArray.push(this.store.animeList[this.currentIndex]);
-            this.currentIndex = (this.currentIndex + 1) % originalArray.length;
+            this.currentIndex = (this.currentIndex + 1) % this.store.animeList.length;
         },
         forwardPicCarousel(){
             this.currentArray.pop();
             this.currentArray.unshift(this.store.animeList[this.backwardIndex]);
-            this.reverseIndex = (this.reverseIndex - 1 + originalArray.length) % originalArray.length;
+            this.backwardIndex = (this.backwardIndex - 1 + this.store.animeList.length) % this.store.animeList.length;
         }
     },
     created() {
@@ -43,9 +43,11 @@ export default {
     <div class="container-fluid d-flex align-items-center">
         <div class="row overflow-x-auto">
             <div class="d-flex flex-nowrap">
+                <button @click="forwardPicCarousel()"><</button>
                 <li v-for="pic in currentArray" :key="pic.id" class="card">
                     <img :src="getImagePath(`.${pic.path}`)" :alt="pic.id">
                 </li>
+                <button @click="nextPicCarousel()">></button>
             </div>
         </div>
     </div>
