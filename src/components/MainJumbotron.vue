@@ -70,20 +70,22 @@ export default{
                 <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
                     <article class="d-flex align-items-center justify-content-center position-relative">
                         <img :src="getImagePath(article.path)" :alt="article.title" class="h-100">
-                        <div class="overlay position-absolute h-100 w-100 d-flex flex-column justify-content-between fw-bold">
-                            <div>
-                                <span class="tag fw-normal px-3 py-1" v-for="(tag, index) in article.category" :key="tag.index"> {{ tag }}</span>
-                            </div>
-                            <div>
-                                <p class="mb-0 d-flex justify-content-center align-items-baseline">
-                                    <font-awesome-icon icon="fa-solid fa-user"/>
-                                    <span class="mx-1">{{ article.author }}</span>
-                                    <font-awesome-icon icon="fa-solid fa-calendar-days" class="mx-1"/>
-                                    <span>{{ article.date }}</span>
-                                </p>
-                                <p class="mb-0 fs-6"> {{ article.title }} </p>
-                            </div>
+                        <div class="overlay position-absolute h-100 w-100">
                         </div>
+                        <div class="article-info position-absolute h-100 w-100 d-flex flex-column justify-content-between fw-bold">
+                                <div>
+                                    <span class="tag fw-normal px-3 py-1" v-for="(tag, index) in article.category" :key="tag.index"> {{ tag }}</span>
+                                </div>
+                                <div>
+                                    <p class="mb-0 d-flex justify-content-center align-items-baseline">
+                                        <font-awesome-icon icon="fa-solid fa-user"/>
+                                        <span class="mx-1">{{ article.author }}</span>
+                                        <font-awesome-icon icon="fa-solid fa-calendar-days" class="mx-1"/>
+                                        <span>{{ article.date }}</span>
+                                    </p>
+                                    <p class="mb-0 fs-6"> {{ article.title }} </p>
+                                </div>
+                            </div>
                     </article>
                 </div>
             </div>
@@ -110,6 +112,10 @@ article {
     div.overlay {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
+    }
+
+    .article-info {
+        z-index: 2;
         color: white;
         padding: 1.2rem;
 
@@ -129,10 +135,6 @@ article {
 article:hover .overlay {
     filter: contrast(50%);
     transition: all .2s ease-out;
-}
-
-article:hover .overlay>div {
-    filter: contrast(1.75);
 }
 
 div.col-3 {
