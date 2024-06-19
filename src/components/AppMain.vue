@@ -1,6 +1,8 @@
 <script>
 import { store } from "../store";
 import MainPlayer from "./MainPlayer.vue"
+import MainSmallCarousel from "./MainSmallCarousel.vue"
+import MainLifestyle from "./MainLifestyle.vue"
 
 export default {
     data() {
@@ -9,13 +11,17 @@ export default {
         }
     },
     components: {
-        MainPlayer
+        MainPlayer,
+        MainSmallCarousel,
+        MainLifestyle
     }
 }
 </script>
 
 <template>
-
+    
+    <MainSmallCarousel/>
+    <MainLifestyle/>
     <MainPlayer/>
 
 </template>
