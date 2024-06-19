@@ -70,9 +70,9 @@ export default{
                 <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
                     <article class="d-flex align-items-center justify-content-center position-relative">
                         <img :src="getImagePath(article.path)" :alt="article.title" class="h-100">
-                        <div class="overlay position-absolute h-100 w-100 d-flex flex-column justify-content-between p-3 fw-bold">
+                        <div class="overlay position-absolute h-100 w-100 d-flex flex-column justify-content-between fw-bold">
                             <div>
-                                <span class="tag py-2 px-1" v-for="(tag, index) in article.category" :key="tag.index"></span>
+                                <span class="tag fw-normal px-3 py-1" v-for="(tag, index) in article.category" :key="tag.index"> {{ tag }}</span>
                             </div>
                             <div>
                                 <p class="mb-0 d-flex justify-content-center align-items-baseline">
@@ -111,11 +111,19 @@ article {
         background-color: rgba(0, 0, 0, 0.5);
         z-index: 1;
         color: white;
+        padding: 1.2rem;
 
         p> span{
             font-size: .9rem;
         }
     }
+}
+
+.tag {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    margin: 0 .3rem;
 }
 
 article:hover > div {
