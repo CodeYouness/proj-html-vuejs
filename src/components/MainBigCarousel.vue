@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-
+<div>MainBigCarousel</div>
 </template>
 
 <style scoped lang="scss">
