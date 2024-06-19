@@ -8,5 +8,6 @@
 </template>
 
 <style lang="scss">
-@use '../node_modules/bootstrap/scss/bootstrap.scss'
+@use '../node_modules/bootstrap/scss/bootstrap.scss';
+@use './styles/general.scss' as *;
 </style>
