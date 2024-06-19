@@ -70,8 +70,6 @@ export default {
 <template>
 <footer class="wrapper">
     <div class="container">
-
-      
             <section class="links">
             <nav>    
             <p>get started</p>
@@ -101,16 +99,24 @@ export default {
             </ul>
             </nav>
 
-            <div>
+            <div class="d-flex flex-column">
                 <p>subscribe to newsletter</p>
                 <input type="email" id="email" placeholder="Email">
                 <button>subscribe</button>
             </div>
             
             </section>
-         
-       
         
+            <div class="line">
+                <hr>
+            </div>
+
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="img-container">
+                    <img src="../assets/anime-whitelogo.png" alt="">
+                </div>
+                <p>Anime Tech, Theme by HasnainDEV</p>
+            </section>
     </div>
 </footer>
 </template>
@@ -120,16 +126,29 @@ export default {
 @use '../styles/partials/variable' as *;
 @use '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+.wrapper {
+    background-color: $primary-color;
+}
+
 .links {
     display: flex;
     justify-content: space-between;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
 }
 
-ul {
-    list-style: none;
+.line {
+    padding: 0.5rem 0;
 }
 
-.wrapper {
-    background-color: $primary-color;
+.img-container {
+    width: 250px;
+
+    img {
+        width: 100%;
+    }
 }
 </style>
