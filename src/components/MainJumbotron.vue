@@ -126,9 +126,13 @@ article {
     margin: 0 .3rem;
 }
 
-article:hover > div {
+article:hover .overlay {
     filter: contrast(50%);
     transition: all .2s ease-out;
+}
+
+article:hover .overlay>div {
+    filter: contrast(1.75);
 }
 
 div.col-3 {
