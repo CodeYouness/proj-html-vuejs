@@ -11,7 +11,7 @@ export default {
 </script>
 
 <template>
-
+<div>MainPlayer</div>
 </template>
 
 <style scoped lang="scss">

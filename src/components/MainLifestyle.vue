@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-
+<div>MainLifestyle</div>
 </template>
 
 <style scoped lang="scss">
