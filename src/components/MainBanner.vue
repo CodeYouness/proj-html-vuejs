@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-
+<div>MainBanner</div>
 </template>
 
 <style scoped lang="scss">
