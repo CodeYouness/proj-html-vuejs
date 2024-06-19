@@ -4,99 +4,99 @@ export const store = reactive({
     animeList: [
         {
             "id": 1,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 2,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 3,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 4,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 5,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 6,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 7,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 8,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 9,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 10,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 11,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         },
         {
             "id": 12,
-            "categoria": "",
-            "titolo": "",
-            "data": "",
-            "descrizione": "",
-            "link": ""
+            "category": "",
+            "title": "",
+            "date": "",
+            "description": "",
+            "path": ""
         }
     ]
 
