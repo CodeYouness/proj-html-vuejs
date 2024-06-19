@@ -7,7 +7,10 @@ import { library } from '../node_modules/@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '../node_modules/@fortawesome/vue-fontawesome'
 
 import { faStar } from '@fortawesome/free-regular-svg-icons'
-library.add(faStar)
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faStar, faUser, faCalendarDays)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)

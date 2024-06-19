@@ -68,8 +68,22 @@ export default{
         <div class="container">
             <div class="row flex-column justify-content-between">
                 <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
-                    <article class="d-flex align-items-center justify-content-center">
+                    <article class="d-flex align-items-center justify-content-center position-relative">
                         <img :src="getImagePath(article.path)" :alt="article.title" class="h-100">
+                        <div class="overlay position-absolute h-100 w-100 d-flex flex-column justify-content-between p-3 fw-bold">
+                            <div>
+                                <span class="tag py-2 px-1" v-for="(tag, index) in article.category" :key="tag.index"></span>
+                            </div>
+                            <div>
+                                <p class="mb-0 d-flex justify-content-center align-items-baseline">
+                                    <font-awesome-icon icon="fa-solid fa-user"/>
+                                    <span class="mx-1">{{ article.author }}</span>
+                                    <font-awesome-icon icon="fa-solid fa-calendar-days" class="mx-1"/>
+                                    <span>{{ article.date }}</span>
+                                </p>
+                                <p class="mb-0 fs-6"> {{ article.title }} </p>
+                            </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -91,6 +105,22 @@ article {
     border-radius: 8px;
     overflow-x: clip;
     height: 100%;
+    cursor: pointer;
+
+    div.overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+        color: white;
+
+        p> span{
+            font-size: .9rem;
+        }
+    }
+}
+
+article:hover > div {
+    filter: contrast(50%);
+    transition: all .2s ease-out;
 }
 
 div.col-3 {
