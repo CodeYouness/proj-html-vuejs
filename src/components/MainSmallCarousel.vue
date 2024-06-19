@@ -6,6 +6,7 @@ export default {
         return {
             store,
             currentIndex: 4,
+            backwardIndex: store.animeList.length - 1,
             currentArray: []
         }
     },
@@ -21,13 +22,14 @@ export default {
             console.log(this.currentArray)
         },
         nextPicCarousel(){
-        this.currentArray.shift();
-        this.currentArray.push(this.store.animeList[this.currentIndex]);
-        if (this.currentIndex > 12) {
-            this.currentIndex = this.currentIndex + 1;
-        } else {
-            this.currentIndex = 0
-        }
+            this.currentArray.shift();
+            this.currentArray.push(this.store.animeList[this.currentIndex]);
+            this.currentIndex = (this.currentIndex + 1) % originalArray.length;
+        },
+        forwardPicCarousel(){
+            this.currentArray.pop();
+            this.currentArray.unshift(this.store.animeList[this.backwardIndex]);
+            this.reverseIndex = (this.reverseIndex - 1 + originalArray.length) % originalArray.length;
         }
     },
     created() {
