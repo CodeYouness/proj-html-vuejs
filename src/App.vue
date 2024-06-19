@@ -1,11 +1,12 @@
 <script setup>
 // import HelloWorld from './components/HelloWorld.vue'
+
 </script>
 
 <template>
 
 </template>
 
-<style scoped lang="scss">
-
+<style lang="scss">
+@use '../node_modules/bootstrap/scss/bootstrap.scss'
 </style>
