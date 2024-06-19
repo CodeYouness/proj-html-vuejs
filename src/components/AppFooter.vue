@@ -68,29 +68,49 @@ export default {
 </script>
 
 <template>
-<footer>
-    <div class="wrapper">
-        <section class="links">
+<footer class="wrapper">
+    <div class="container">
+
+      
+            <section class="links">
+            <nav>    
             <p>get started</p>
             <ul v-for="(link, index) in getStartedLinks" :key="index">
                 <li>{{ link.title }}</li>
             </ul>
+            </nav>
              
+            <nav>
             <p>about</p>
             <ul v-for="(link, index) in aboutLinks" :key="index">
                 <li>{{ link.title }}</li>
             </ul>
+            </nav>
 
+            <nav>
             <p>features</p>
             <ul v-for="(link, index) in featuresLinks" :key="index">
                 <li>{{ link.title }}</li>
             </ul>
-
+            </nav>
+             
+            <nav>
             <p>quick links</p>
             <ul v-for="(link, index) in quickLinks" :key="index">
                 <li>{{ link.title }}</li>
             </ul>
-        </section>
+            </nav>
+
+            <div>
+                <p>subscribe to newsletter</p>
+                <input type="email" id="email" placeholder="Email">
+                <button>subscribe</button>
+            </div>
+            
+            </section>
+         
+       
+        
     </div>
 </footer>
 </template>
@@ -98,9 +118,15 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+@use '../../node_modules/bootstrap/scss/bootstrap.scss';
 
-* {
-    @include reset;
+.links {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
 }
 
 .wrapper {
