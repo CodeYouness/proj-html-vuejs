@@ -11,7 +11,9 @@ export default {
 </script>
 
 <template>
-
+<section>
+    <h1>franco</h1>
+</section>
 </template>
 
 <style scoped lang="scss">
