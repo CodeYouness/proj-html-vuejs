@@ -39,6 +39,27 @@ export default {
                     "title": " You have no enemies.",
                     "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
                 },
+                {
+                    "id": 5,
+                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "active": true,
+                    "title": " You have no enemies.",
+                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                },
+                {
+                    "id": 6,
+                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "active": true,
+                    "title": " You have no enemies.",
+                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                },
+                {
+                    "id": 7,
+                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "active": true,
+                    "title": " You have no enemies.",
+                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                },
             ],
             currentVideo: 'https://www.youtube.com/embed/r8eQDtOnUsY?si=iZQc1p_vPALSVHcY',
             currentIndex: 0
@@ -54,45 +75,57 @@ export default {
 </script>
 
 <template>
-    <section class="d-flex border">
-        <div>
-            <iframe :src="currentVideo" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div class="d-flex flex-column overflow-y-auto">
-            <div class="border text-center">
-                <h1>Video Playlist</h1>
-                <h2> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
+    <section class="d-flex border container p-0">
+            <div class="w-75">
+                <iframe :src="currentVideo" title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="d-flex border" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
-                <p class=" align-self-center mx-2 index-video text-white">{{ index }}</p>
-                <img :src="link.thumbnail" alt="Thumbnail">
-                <p class="align-self-center mx-2">{{ link.title }}</p>
+            <div class="d-flex flex-column overflow-y-auto w-25 playlist">
+                <div class="border text-center header-playlist container-fluid">
+                    <h1>Video Playlist</h1>
+                    <h2> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
+                </div>
+                <div class="main">
+                    <div class="d-flex border videos-list" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
+                        <p class=" align-self-center mx-2 index-video text-white">{{ index }}</p>
+                        <img :src="link.thumbnail" alt="Thumbnail">
+                        <p class="align-self-center mx-2">{{ link.title }}</p>
+                    </div>
+                </div>
             </div>
-        </div>
     </section>
 </template>
 
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
-
-section {
-    max-height: 700px;
+section,
+.playlist{
+    max-height: 550px;
+    position: relative;
+    
 }
-
+.header-playlist{
+    position: fixed;
+    height: 100px;
+    width: 331px;
+    z-index: 1;
+    background-color: #333333;
+    color: white;
+}
+.main{
+    padding-top: 100px;
+}
+iframe{
+    width: 100%;
+    height: 100%;
+}
 img {
     width: 70px;
     height: 70px;
     border-radius: 20%;
 }
-
-iframe {
-    width: 1200px;
-    height: 100%;
-}
-
 .index-video {
     background-color: black;
     border-radius: 20%;
