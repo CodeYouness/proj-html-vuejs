@@ -13,10 +13,10 @@ export default {
 <template>
     <section>
         <div class="container ">
-            <div class="row ">
-                <div class="col-2">
+            <div class="d-flex justify-content-between  ">
+                <div class="">
                     <nav class="navbar">
-                        <div class="container-fluid">
+                        <div class="container-fluid ">
                             <button
                             class="navbar-toggler"
                             type="button"
@@ -28,7 +28,7 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas m-0 d-flex justify-content-center offcanvas-start"
+                                class="offcanvas m-0 d-flex justify-content-center w-75 offcanvas-start "
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
@@ -83,7 +83,7 @@ export default {
                         </div>
                     </nav>
                 </div>
-                <div class="col-8  d-flex">
+                <div class="">
                     <nav class="navbar navbar-expand-sm ">
                         <div class="container ">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,20 +92,48 @@ export default {
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i>Home</a>
+                                    <a class="nav-link " aria-current="page" href="#"><i class="fa-solid fa-house"></i>Home</a>
                                     </li>
                                     <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa-solid fa-user"></i>about us</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-suitcase"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-suitcase"></i>
                                         lifestyle
                                         </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <ul class="dropdown-menu text-center">
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/visit-france.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Reasons To Visit France</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/best-places.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Place For A RoadTrip</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/music-love.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Music The Love Of My Life</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/anime-fashion.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Fashion Trend Now A Days</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
                                             </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -138,7 +166,7 @@ export default {
                         </div>
                     </nav>
                 </div>
-                <div class="col-2">
+                <div class="">
                     <nav class="navbar navbar-expand-sm">
                         <div class="container">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -167,12 +195,15 @@ export default {
     color: $primary-color;
     transition: .4s;
 }
-li a:active{
+
+a :active{
     color: $primary-color;
 }
 
 ul li a i{
     padding-right: .4rem;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
@@ -185,15 +216,16 @@ li a img{
     border-radius: .4rem;
 }
 
-.offcanvas{
-    
-}
-
 ul.zocial li a{
     background-color: $primary-color;
     color: white;
-    a:hover{
-        background-color:$background-color;
-    }
+    margin: .3rem;
+    width: 38px;
+    padding: .4rem;
+}
+
+.zocial a:hover{
+    background-color:$background-color;
+
 }
 </style>
