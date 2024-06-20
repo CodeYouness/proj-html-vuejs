@@ -13,7 +13,7 @@ export default{
                     "author": "demo",
                     "date": "December 25 , 2022",
                     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "anime-fashion.webp"
+                    "path": "./assets/anime-fashion.webp"
                 },
                 {
                     "id": 8,
@@ -22,7 +22,7 @@ export default{
                     "author": "demo",
                     "date": "December 26 , 2022",
                     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "travel-alone.webp"
+                    "path": "./assets/travel-alone.webp"
                 },
                 {
                     "id": 10,
@@ -31,7 +31,7 @@ export default{
                     "author": "demo",
                     "date": "December 25 , 2022",
                     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "best-places.webp"
+                    "path": "./assets/best-places.webp"
                 },
                 {
                     "id": 11,
@@ -40,7 +40,7 @@ export default{
                     "author": "demo",
                     "date": "December 25 , 2022",
                     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "music-love.webp"
+                    "path": "./assets/music-love.webp"
                 },
                 {
                     "id": 7,
@@ -49,7 +49,7 @@ export default{
                     "author": "demo",
                     "date": "December 26 , 2022",
                     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "visit-france.webp"
+                    "path": "./assets/visit-france.webp"
                 },
             ],
             biggerArticle : 10,
@@ -57,14 +57,14 @@ export default{
     },
     methods: {
         getImagePath: function(img){
-            return new URL(`../assets/${img}`, import.meta.url).href;
+            return new URL('./.' + img, import.meta.url).href;
         }
     }
 }
 </script>
 
 <template>
-    <section id="jumbotron" class="py-3">
+    <section id="jumbotron" class="mt-5">
         <div class="container">
             <div class="row flex-column justify-content-between">
                 <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
