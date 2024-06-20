@@ -86,7 +86,7 @@ export default {
                     <h1>Video Playlist</h1>
                     <h2> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
                 </div>
-                <div class="main">
+                <div class="main overflow-y-auto">
                     <div class="d-flex border videos-list" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
                         <p class=" align-self-center mx-2 index-video text-white">{{ index }}</p>
                         <img :src="link.thumbnail" alt="Thumbnail">
@@ -103,19 +103,13 @@ export default {
 section,
 .playlist{
     max-height: 550px;
-    position: relative;
     
 }
 .header-playlist{
-    position: fixed;
-    height: 100px;
-    width: 331px;
-    z-index: 1;
+    height: 20%;
+    width: 100%;
     background-color: #333333;
     color: white;
-}
-.main{
-    padding-top: 100px;
 }
 iframe{
     width: 100%;
