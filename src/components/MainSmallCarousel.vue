@@ -24,6 +24,7 @@ export default {
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
             this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length;
             console.log(this.currentIndex)
+            console.log(this.currentArray)
         },
         forwardPicCarousel(){
             this.currentArray.pop();
@@ -31,9 +32,10 @@ export default {
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
             this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
             console.log(this.backwardIndex);
+            console.log(this.currentArray)
         }
     },
-    created() {
+    mounted() {
         this.getFourCard(this.store.apiList)
     }
 }
