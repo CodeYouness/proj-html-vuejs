@@ -19,7 +19,7 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 div.container-fluid{
-    background-color: #f3f3f3;
+    background-color: $secondary-color;
 }
 
 </style>

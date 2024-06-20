@@ -185,9 +185,6 @@ li a img{
     border-radius: .4rem;
 }
 
-.offcanvas{
-    
-}
 
 ul.zocial li a{
     background-color: $primary-color;
