@@ -142,7 +142,7 @@ export default {
 
 .wrapper {
     background-color: $primary-color;
-    padding: 2rem 0;
+    padding: 4rem 0 2rem 0;
 }
 
 .links {
@@ -153,6 +153,23 @@ export default {
     p {
         text-transform: uppercase;
         font-weight: bold;
+        font-size: 20px;
+    }
+
+    input {
+        margin-top: 0.3rem;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
+    }
+
+    button {
+        margin-top: 0.3rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: none;
+        background-color: #545454;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5px;
     }
 
 
@@ -162,6 +179,10 @@ export default {
         margin: 0;
         text-transform: capitalize;
         font-weight: bold;
+        
+        li {
+            font-size: 16px;
+        }
 
         a {
             text-decoration: none;
