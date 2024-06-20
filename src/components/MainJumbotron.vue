@@ -5,60 +5,21 @@ export default{
     data(){
         return {
             store,
-            trendingNews: [
-                {
-                    "id": 12,
-                    "category": ["Fashion", "Lifestyle"],
-                    "title": "Fashion Trend Now A Days",
-                    "author": "demo",
-                    "date": "December 25 , 2022",
-                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "./assets/anime-fashion.webp"
-                },
-                {
-                    "id": 8,
-                    "category": ["Stories", "Travel"],
-                    "title": "Traveling Alone Is Awesome",
-                    "author": "demo",
-                    "date": "December 26 , 2022",
-                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "./assets/travel-alone.webp"
-                },
-                {
-                    "id": 10,
-                    "category": ["LifeStyle", "Stories", "Travel"],
-                    "title": "Place For A Road Trip",
-                    "author": "demo",
-                    "date": "December 25 , 2022",
-                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "./assets/best-places.webp"
-                },
-                {
-                    "id": 11,
-                    "category": ["Culture", "Lifestyle"],
-                    "title": "Music The Love Of My Life",
-                    "author": "demo",
-                    "date": "December 25 , 2022",
-                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "./assets/music-love.webp"
-                },
-                {
-                    "id": 7,
-                    "category": ["Lifestyle", "Travel"],
-                    "title": "Reasons To Visit France",
-                    "author": "demo",
-                    "date": "December 26 , 2022",
-                    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-                    "path": "./assets/visit-france.webp"
-                },
-            ],
-            biggerArticle : 10,
+            trendingNewsIds: [12, 8, 10, 11, 7],
+            trendingNews: [],
+            biggerArticleId : 10,
         }
     },
     methods: {
         getImagePath: function(img){
             return new URL('./.' + img, import.meta.url).href;
+        },
+        getTrendingNews: function(){
+            this.trendingNews = this.store.animeList.filter((obj) => this.trendingNewsIds.includes(obj.id));
         }
+    },
+    created(){
+        this.getTrendingNews();
     }
 }
 </script>
@@ -67,7 +28,7 @@ export default{
     <section id="jumbotron" class="mt-5 mb-5">
         <div class="container">
             <div class="row flex-column justify-content-between">
-                <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
+                <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticleId) ? 'col-6' : 'col-3'">
                     <article class="h-100 d-flex align-items-center justify-content-center position-relative text-center">
                         <img :src="getImagePath(article.path)" :alt="article.title" class="h-100">
                         <div class="overlay position-absolute z-1 h-100 w-100">
