@@ -81,7 +81,7 @@ export default {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="d-flex flex-column overflow-y-auto w-25 playlist">
+            <div class="d-flex flex-column w-25 playlist">
                 <div class="border text-center header-playlist container-fluid">
                     <h1>Video Playlist</h1>
                     <h2> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
