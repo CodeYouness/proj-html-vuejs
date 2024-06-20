@@ -107,6 +107,7 @@ img {
 
 button {
     color: $primary-color;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 button:hover {
