@@ -53,11 +53,11 @@ export default {
 
 <template>
     <div class="container-fluid mt-5 mb-1">
-            <div class="d-flex row rounded">
-                <div  v-for="card in categoryCards" :key="card.id" class="col-2">
+            <div class="d-flex row ">
+                <div  v-for="card in categoryCards" :key="card.id" class="col-2 cards">
                     <article class="h-100 d-flex align-items-center justify-content-center position-relative">
-                        <img :src="getImagePath(card.path)" :alt="card.title" class="h-100">
-                        <div class="overlay position-absolute z-1 h-100 w-100">
+                        <img :src="getImagePath(card.path)" :alt="card.title" class="rounded-2 h-100">
+                        <div class="overlay position-absolute z-1 h-100 w-100 ">
                         </div>
                         <div class=" position-absolute z-2 h-100 w-100 justify-content-between ">
                                 <div class="content-wrap">
@@ -74,6 +74,10 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+
+.cards{
+    height: 230px;
+}
 
 img{
     width: 100%;
@@ -99,8 +103,8 @@ article:hover .overlay {
 }
 article:hover .content-wrap{
     border: 1px solid white;
-    width: 70%;
-    height: 70%;
+    width: 75%;
+    height: 75%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -108,6 +112,7 @@ article:hover .content-wrap{
 }
 .active{
     display: none;
+    font-size: 16px;
 }
 article:hover .active{
     display: block;
