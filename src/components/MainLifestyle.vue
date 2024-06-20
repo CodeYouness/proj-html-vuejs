@@ -126,9 +126,10 @@ export default{
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-    article,
-    label {
+    article {
         cursor: pointer;
+        // animation-name: moveUpwards;
+        // animation-duration: 2s;
     }
 
     input[type="radio"] {
@@ -144,6 +145,7 @@ export default{
         color: white;
         margin-left: 1.2rem;
         padding: 0.3rem 1rem;
+        cursor: pointer;
     }
 
     input[type="radio"]:checked + label,
@@ -259,4 +261,9 @@ export default{
     animation: l2 1s infinite linear;
 }
 @keyframes l2 {to{transform: rotate(1turn)}}
+
+@keyframes moveUpwards {
+    from {margin-top: 35px}
+    to {margin-top: 0}
+}
 </style>
