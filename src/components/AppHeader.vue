@@ -78,7 +78,7 @@ a{
     margin: .3rem;
     background-color: white;
 }
-a:hover{
+.nav a:hover{
 background-color: $background-color;
 color: white;
 transition: .4s;
