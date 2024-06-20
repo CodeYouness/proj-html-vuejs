@@ -2,16 +2,101 @@
 export default {
     data() {
         return {
+            categoryCards: [
+                {
+                    "id": 12,
+                    "category": ["Fashion", "Lifestyle"],
+                    "title": "Fashion Trend Now A Days",
+                    "path": "./assets/anime-fashion.webp"
+                },
+                {
+                    "id": 9,
+                    "category": ["Culture", "Stories"],
+                    "title": "The Best Succes Stories",
+                    "path": "./assets/success-story.webp"
+                },
+                {
+                    "id": 3,
+                    "category": ["Food"],
+                    "title": "The Best Healthy Foods",
+                    "path": "./assets/healthy-foods.webp"
+                },
+                {
+                    "id": 7,
+                    "category": ["Lifestyle", "Travel"],
+                    "title": "Reasons To Visit France",
+                    "path": "./assets/visit-france.webp"
+                },
+                {
+                    "id": 8,
+                    "category": ["Stories", "Travel"],
+                    "title": "Traveling Alone Is Awesome",
+                    "path": "./assets/travel-alone.webp"
+                },
+                {
+                    "id": 10,
+                    "category": ["Travel", "Stories", "LifeStyle"],
+                    "title": "Place For A Road Trip",
+                    "path": "./assets/best-places.webp"
+                },
+                
+            ],
+        }
+    },
+    methods: {
+        getImagePath: function(img){
+            return new URL('./.' + img, import.meta.url).href;
         }
     },
 }
 </script>
 
 <template>
-<div>MainCategoryPost</div>
+    <div class="container-fluid mt-5 mb-1">
+            <div class="d-flex row rounded">
+                <div  v-for="card in categoryCards" :key="card.id" class="col-2">
+                    <article class="h-100 d-flex align-items-center justify-content-center position-relative text-center">
+                        <img :src="getImagePath(card.path)" :alt="card.title" class="h-100">
+                        <div class="overlay position-absolute z-1 h-100 w-100">
+                            <p>ciao</p>
+                        </div>
+                        <div class="article-info position-absolute z-2 h-100 w-100 d-flex flex-column justify-content-between text-white fw-bold">
+                                <div>
+                                    <span class=" centered" > {{ card.category[0] }}</span>
+                                </div>
+                            </div>
+                    </article>
+                </div>
+            </div>
+        </div>
 </template>
 
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+
+img{
+    width: 100%;
+}
+span{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 650;
+    font-size: 24px;
+}
+div.overlay {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+.centered {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+article:hover .overlay {
+    background-color: rgba(214, 11, 11, 0.534);
+    transition: all .2s ease-out;
+}
+
+
 </style>
