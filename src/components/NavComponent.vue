@@ -12,7 +12,7 @@ export default {
 
 <template>
     <section>
-        <div class="container">
+        <div class="container ">
             <div class="row ">
                 <div class="col-2">
                     <nav class="navbar">
@@ -28,7 +28,7 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas w-75 m-0 d-flex justify-content-center offcanvas-start"
+                                class="offcanvas m-0 d-flex justify-content-center offcanvas-start"
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
@@ -83,9 +83,9 @@ export default {
                         </div>
                     </nav>
                 </div>
-                <div class="col-8  d-flex ">
-                    <nav class="navbar navbar-expand-sm">
-                        <div class="container-fluid">
+                <div class="col-8  d-flex">
+                    <nav class="navbar navbar-expand-sm ">
+                        <div class="container ">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -183,6 +183,10 @@ li a img{
     width: 160px;
     margin: .3rem;
     border-radius: .4rem;
+}
+
+.offcanvas{
+    
 }
 
 ul.zocial li a{

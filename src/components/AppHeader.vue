@@ -16,9 +16,9 @@ export default {
 <template>
     <section class="primary">
         <div class="container">
-            <div class="row d-flex">
-                <div class="col-9 m-0 d-flex ">
-                    <h1 class="mb-0 ">news updates</h1>
+            <div class="row">
+                <div class="col-9 m-0 d-flex align-middle ">
+                    <h1 class="mb-0 p-2 pt-3">news updates</h1>
                     <h2 class="">carousel</h2>
                 </div>
                 <div class="col-3 m-0 ">
@@ -67,8 +67,8 @@ h1{
     background-color: #545454;
     text-transform: uppercase;
     color: white;
-    width: auto;
-    
+    font-size: 1.2rem;
+    font-weight: bolder;
 }
 div{
     margin: 0 auto;
