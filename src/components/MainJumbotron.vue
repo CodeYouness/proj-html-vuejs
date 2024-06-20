@@ -1,5 +1,6 @@
 <script>
 import { store } from '../store.js';
+import MainLifestyle from './MainLifestyle.vue';
 
 export default{
     data(){
@@ -59,22 +60,25 @@ export default{
         getImagePath: function(img){
             return new URL('./.' + img, import.meta.url).href;
         }
+    },
+    components: {
+        MainLifestyle
     }
 }
 </script>
 
 <template>
-    <section id="jumbotron" class="mt-5">
+    <section id="jumbotron" class="mt-5 mb-5">
         <div class="container">
             <div class="row flex-column justify-content-between">
                 <div v-for="article in trendingNews" :key="article.id" :class="(article.id === biggerArticle) ? 'col-6' : 'col-3'">
-                    <article class="d-flex align-items-center justify-content-center position-relative">
+                    <article class="h-100 d-flex align-items-center justify-content-center position-relative text-center">
                         <img :src="getImagePath(article.path)" :alt="article.title" class="h-100">
-                        <div class="overlay position-absolute h-100 w-100">
+                        <div class="overlay position-absolute z-1 h-100 w-100">
                         </div>
-                        <div class="article-info position-absolute h-100 w-100 d-flex flex-column justify-content-between fw-bold">
+                        <div class="article-info position-absolute z-2 h-100 w-100 d-flex flex-column justify-content-between text-white fw-bold">
                                 <div>
-                                    <span class="tag fw-normal px-3 py-1" v-for="(tag, index) in article.category" :key="tag.index"> {{ tag }}</span>
+                                    <span class="tag bg-white fw-normal text-black px-3 py-1" v-for="(tag, index) in article.category" :key="tag.index"> {{ tag }}</span>
                                 </div>
                                 <div>
                                     <p class="mb-0 d-flex justify-content-center align-items-baseline">
@@ -91,6 +95,7 @@ export default{
             </div>
         </div>
     </section>
+    <MainLifestyle />
 </template>
 
 <style scoped lang="scss">
@@ -102,21 +107,15 @@ div.row {
 }
 
 article {
-    text-align: center;
-    color: black;
     border-radius: 8px;
     overflow-x: clip;
-    height: 100%;
     cursor: pointer;
 
     div.overlay {
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
     }
 
     .article-info {
-        z-index: 2;
-        color: white;
         padding: 1.2rem;
 
         p> span{
@@ -126,8 +125,6 @@ article {
 }
 
 .tag {
-    background-color: white;
-    color: black;
     border-radius: 5px;
     margin: 0 .3rem;
 }
