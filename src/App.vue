@@ -21,9 +21,10 @@ export default {
     methods:{
         getAnimeList(){
             axios.get('http://152.89.170.170:3000/events/geek')
-            .then(function (response) {
+            .then((response) => {
                 // handle success
-                console.log(response);
+                console.log(response.data);
+                this.store.animeList = response.data
             })
             .catch(function (error) {
                 // handle error
