@@ -5,20 +5,35 @@ export default{
     data(){
         return {
             store,
-            lifestyleArray: [],
+            filteredArray: [],
             randomArticlesArray: [],
+            visibleArticlesArray: [],
+            radioValue: ''
         }
     },
     methods: {
         filterAnimeListArray: function(){
-            this.lifestyleArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle') || obj.category.includes('Stories'))
-            // console.log(this.lifestyleArray);
+            switch (this.radioValue){
+                case 'lifestyle':
+                    this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle'));
+                    this.visibleArticlesArray = this.filteredArray;
+                    break;
+                case 'stories':
+                    this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Stories'))
+                    this.visibleArticlesArray = this.filteredArray;
+                    break;
+                default:
+                    this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle') || obj.category.includes('Stories'));
+                    this.randomizeArticles(this.filteredArray,);
+                    this.visibleArticlesArray = this.randomArticlesArray;
+            }
+            console.log(this.filteredArray);
         },
-        randomizeArticles: function(){
+        randomizeArticles: function(originalArray){
             let index = 0;
             while (this.randomArticlesArray.length < 4){
-                const randomNumber = Math.floor(Math.random() * this.lifestyleArray.length);
-                const newObj = this.lifestyleArray[randomNumber];
+                const randomNumber = Math.floor(Math.random() * originalArray.length);
+                const newObj = this.filteredArray[randomNumber];
                 if(!(this.randomArticlesArray.includes(newObj))){
                     this.randomArticlesArray.push(newObj);
                 }
@@ -29,13 +44,13 @@ export default{
         getImagePath: function(img){
             return new URL('./.' + img, import.meta.url).href;
         },
-        getRandomNumber: function(max){
-            return Math.floor(Math.random() * max);
+        changeValue: function(value){
+            this.radioValue = value;
+            console.log(this.radioValue);
         }
     },
     created(){
         this.filterAnimeListArray();
-        this.randomizeArticles();
     }
 }
 </script>
@@ -43,28 +58,28 @@ export default{
 <template>
     <section id="lifestyle" class="mb-5">
         <div class="container">
-            <div class="row">
-                <div class="col-9 text-uppercase">
-                    <h3 class="fw-bold fs-4">Lifestyle & stories</h3>
+            <div class="row text-uppercase mb-3">
+                <div class="col-8">
+                    <h3 class="fw-bold fs-4 mb-0">Lifestyle & stories</h3>
                 </div>
-                <div class="col-3">
-                    <input type="radio" name="category-tag" id="tag-all">
+                <div class="col-4 d-flex align-items-center justify-content-end">
+                    <input type="radio" name="category-tag" id="tag-all" value="all" @click="changeValue('all'), filterAnimeListArray()">
                     <label for="tag-all">All</label>
-                    <input type="radio" name="category-tag" id="tag-lifestyle">
+                    <input type="radio" name="category-tag" id="tag-lifestyle" value="lifestyle" @click="changeValue('lifestyle'), filterAnimeListArray()">
                     <label for="tag-lifestyle">Lifestyle</label>
-                    <input type="radio" name="category-tag" id="tag-stories">
+                    <input type="radio" name="category-tag" id="tag-stories" value="stories" @click="changeValue('stories'), filterAnimeListArray()">
                     <label for="tag-stories">Stories</label>
                 </div>
             </div>
             <div class="article-wrapper row flex-column">
-                <div v-for="(article, index) in randomArticlesArray" :key="article.index" :class="index === 0 ? 'col-8' : 'col-4'">
+                <div v-for="(article, index) in visibleArticlesArray" :key="article.index" :class="index === 0 ? 'col-8' : 'col-4'">
                     <article class="w-100 d-flex">
                         <div class="article-image position-relative" >
                             <img :src="getImagePath(article.path)" :alt="article.title" class="w-100 h-100 rounded">
                             <div class="overlay position-absolute rounded top-0 z-1 h-100 w-100">
                             </div>
                             <div class="position-absolute z-2 top-0 h-100 w-100 d-flex flex-column align-items-start justify-content-between ps-2 pt-3">
-                                <span class="tag bg-white fw-normal text-black px-3 py-1"> {{ article.category[getRandomNumber(article.category.length)] }}</span>
+                                <span class="tag bg-white fw-normal text-black px-3 py-1"> {{ article.category[0] }}</span>
                                 <div v-if="index == 0" class="article-info fw-bold text-white p-3">
                                     <p class="mb-0 d-flex justify-content-center align-items-baseline">
                                         <font-awesome-icon icon="fa-solid fa-user"/>
@@ -97,9 +112,32 @@ export default{
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-article {
-    cursor: pointer;
-}
+    article,
+    label {
+        cursor: pointer;
+    }
+
+    input[type="radio"] {
+        opacity: 0;
+        position: fixed;
+        width: 0;
+    }
+
+    label {
+        display: inline-block;
+        background-color: #545454;
+        border-radius: 4px;
+        color: white;
+        margin-left: 1.2rem;
+        padding: 0.3rem 1rem;
+    }
+
+    input[type="radio"]:checked + label,
+    input[type="radio"].active + label,
+    input[type="radio"]:focus + label,
+    input[type="radio"]:hover + label {
+        background-color: $primary-color;
+    }
 
 .row.article-wrapper {
     height: 450px;

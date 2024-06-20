@@ -85,7 +85,7 @@ export const store = reactive({
         },
         {
             "id": 10,
-            "category": ["LifeStyle", "Stories", "Travel"],
+            "category": ["Lifestyle", "Stories", "Travel"],
             "title": "Place For A Road Trip",
             "author": "demo",
             "date": "December 25 , 2022",
