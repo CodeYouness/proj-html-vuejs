@@ -81,7 +81,7 @@ export const store = reactive({
             "author": "demo",
             "date": "December 26 , 2022",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",
-            "path": "./assets/succes-story.webp"
+            "path": "./assets/success-story.webp"
         },
         {
             "id": 10,
