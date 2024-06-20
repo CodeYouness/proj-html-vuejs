@@ -21,19 +21,19 @@ export default {
                     <h1 class="mb-0 ">news updates</h1>
                     <h2 class="">carousel</h2>
                 </div>
-                <div class="col-3 m-0">
+                <div class="col-3 m-0 ">
                     <ul class="nav justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link rounded-circle" href="#"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
+                        <li class="nav-item ">
+                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-x-twitter"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded-circle" href="#"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
+                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-instagram"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link rounded-circle" href="#"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link rounded-circle" href="#"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
+                            <a class="nav-link rounded-circle " href="#"><i class="fa-brands fa-youtube"></i></a>
                         </li>
                     </ul>
                 </div>
@@ -73,10 +73,16 @@ h1{
 div{
     margin: 0 auto;
 }
-a{
+ul li a{
     color:$primary-color;
     margin: .3rem;
     background-color: white;
+    width: 42px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding: .8rem;
 }
 .nav a:hover{
 background-color: $background-color;
