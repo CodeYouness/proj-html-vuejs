@@ -10,8 +10,9 @@ import { faStar } from '@fortawesome/free-regular-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFacebookF, faStar, faUser, faCalendarDays)
+library.add(faFacebookF, faStar, faUser, faCalendarDays, faPlay)
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
