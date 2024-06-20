@@ -64,34 +64,35 @@ export default {
 </script>
 
 <template>
+ <div class="black-line"><font-awesome-icon icon="fa-solid fa-caret-down" class="arrow-down"/></div>
 <footer class="wrapper">
     <div class="container">
-            <section class="links">
+            <section class="links mb-2">
             <nav>    
             <p class="text-light">get started</p>
             <ul class="text-light" v-for="(link, index) in getStartedLinks" :key="index">
-                <li class="text-light">{{ link.title }}</li>
+                <li><a href="" class="text-light">{{ link.title }}</a></li>
             </ul>
             </nav>
              
             <nav>
             <p class="text-light">about</p>
             <ul class="text-light" v-for="(link, index) in aboutLinks" :key="index">
-                <li class="text-light">{{ link.title }}</li>
+                <li><a href="" class="text-light">{{ link.title }}</a></li>
             </ul>
             </nav>
 
             <nav>
             <p class="text-light">features</p>
             <ul class="text-light" v-for="(link, index) in featuresLinks" :key="index">
-                <li class="text-light">{{ link.title }}</li>
+                <li><a href="" class="text-light">{{ link.title }}</a></li>
             </ul>
             </nav>
              
             <nav>
             <p class="text-light">quick links</p>
             <ul class="text-light" v-for="(link, index) in quickLinks" :key="index">
-                <li class="text-light">{{ link.title }}</li>
+                <li><a href="" class="text-light">{{ link.title }}</a></li>
             </ul>
             </nav>
 
@@ -103,15 +104,17 @@ export default {
             
             </section>
         
-            <div class="line">
-                <hr class="text-light">
-            </div>
+            <div class="line mb-3"></div>
 
             <section class="d-flex justify-content-between align-items-center">
                 <div class="img-container">
                     <img src="../assets/anime-whitelogo.png" alt="">
                 </div>
-                <p class="text-light">Anime Tech, Theme by HasnainDEV</p>
+                
+                <div class="align-items-center">
+                <p class="text-light mb-0"><font-awesome-icon icon="fa-regular fa-copyright" class="me-2"/>Anime Tech, Theme by HasnainDEV</p>
+                </div>
+                
             </section>
     </div>
 </footer>
@@ -122,22 +125,53 @@ export default {
 @use '../styles/partials/variable' as *;
 @use '../../node_modules/bootstrap/scss/bootstrap.scss';
 
+.black-line {
+    background-color: #333333;
+    padding: 3px 0;
+    position: relative;
+
+    .arrow-down {
+        font-size: 55px;
+        position: absolute;
+        right: 50%;
+        top: -20px;
+        color: #333333;
+        
+    }
+}
+
 .wrapper {
     background-color: $primary-color;
+    padding: 2rem 0;
 }
 
 .links {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 3rem;
+
+    p {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
 
     ul {
         list-style: none;
         padding: 0;
+        margin: 0;
+        text-transform: capitalize;
+        font-weight: bold;
+
+        a {
+            text-decoration: none;
+        }
     }
 }
 
 .line {
-    padding: 0.5rem 0;
+    padding: 0.5px 0;
+    background-color: white;
 }
 
 .img-container {
@@ -147,4 +181,6 @@ export default {
         width: 100%;
     }
 }
+
+
 </style>
