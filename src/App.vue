@@ -2,16 +2,35 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
+import axios from 'axios';
+import { store } from "./store";
 
 export default {
     data() {
         return {
+            store
         }
     },
     components: {
         AppHeader,
         AppMain,
         AppFooter
+    },
+    methods:{
+        getAnimeList(){
+            axios.get('http://152.89.170.170:3000/events/geek')
+            .then(function (response) {
+                // handle success
+                console.log(response);
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+        }
+    },
+    created(){
+        this.getAnimeList()
     }
 }
 </script>
