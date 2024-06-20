@@ -8,7 +8,8 @@ export default{
             filteredArray: [],
             randomArticlesArray: [],
             visibleArticlesArray: [],
-            radioValue: ''
+            radioValue: '',
+            isLoading: false,
         }
     },
     methods: {
@@ -27,7 +28,7 @@ export default{
                     this.randomizeArticles(this.filteredArray,);
                     this.visibleArticlesArray = this.randomArticlesArray;
             }
-            console.log(this.filteredArray);
+            // console.log(this.filteredArray);
         },
         randomizeArticles: function(originalArray){
             let index = 0;
@@ -46,7 +47,17 @@ export default{
         },
         changeValue: function(value){
             this.radioValue = value;
-            console.log(this.radioValue);
+            this.loadingFunction();
+            setTimeout(() => {
+                this.filterAnimeListArray();
+            }, 2150);
+            this.isLoading = true;
+            // console.log(this.radioValue);
+        },
+        loadingFunction: function(){
+            setTimeout(() => {
+                this.isLoading = false;
+            }, 2000);
         }
     },
     created(){
@@ -63,15 +74,18 @@ export default{
                     <h3 class="fw-bold fs-4 mb-0">Lifestyle & stories</h3>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-end">
-                    <input type="radio" name="category-tag" id="tag-all" value="all" @click="changeValue('all'), filterAnimeListArray()">
+                    <input type="radio" name="category-tag" id="tag-all" value="all" @click="changeValue('all')">
                     <label for="tag-all">All</label>
-                    <input type="radio" name="category-tag" id="tag-lifestyle" value="lifestyle" @click="changeValue('lifestyle'), filterAnimeListArray()">
+                    <input type="radio" name="category-tag" id="tag-lifestyle" value="lifestyle" @click="changeValue('lifestyle')">
                     <label for="tag-lifestyle">Lifestyle</label>
-                    <input type="radio" name="category-tag" id="tag-stories" value="stories" @click="changeValue('stories'), filterAnimeListArray()">
+                    <input type="radio" name="category-tag" id="tag-stories" value="stories" @click="changeValue('stories')">
                     <label for="tag-stories">Stories</label>
                 </div>
             </div>
-            <div class="article-wrapper row flex-column">
+            <div class="article-wrapper row flex-column position-relative">
+                <div v-if="isLoading === true" class="loader-overlay position-absolute top-0 z-3 h-100 w-100 p-0 mt-0">
+                    <div class="loader"></div>
+                </div>
                 <div v-for="(article, index) in visibleArticlesArray" :key="article.index" :class="index === 0 ? 'col-8' : 'col-4'">
                     <article class="w-100 d-flex">
                         <div class="article-image position-relative" >
@@ -228,4 +242,21 @@ export default{
         margin: 0 .3rem;
     }
 }
+
+.loader-overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 4px solid #545454;
+    border-right-color: black;
+    animation: l2 1s infinite linear;
+}
+@keyframes l2 {to{transform: rotate(1turn)}}
 </style>
