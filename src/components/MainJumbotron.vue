@@ -1,6 +1,5 @@
 <script>
 import { store } from '../store.js';
-import MainLifestyle from './MainLifestyle.vue';
 
 export default{
     data(){
@@ -60,9 +59,6 @@ export default{
         getImagePath: function(img){
             return new URL('./.' + img, import.meta.url).href;
         }
-    },
-    components: {
-        MainLifestyle
     }
 }
 </script>

@@ -6,16 +6,33 @@ export default{
         return {
             store,
             lifestyleArray: [],
+            randomArticlesArray: [],
         }
     },
     methods: {
         filterAnimeListArray: function(){
             this.lifestyleArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle') || obj.category.includes('Stories'))
             // console.log(this.lifestyleArray);
+        },
+        randomizeArticles: function(){
+            let index = 0;
+            while (this.randomArticlesArray.length < 4){
+                const randomNumber = Math.floor(Math.random() * this.lifestyleArray.length);
+                const newObj = this.lifestyleArray[randomNumber];
+                if(!(this.randomArticlesArray.includes(newObj))){
+                    this.randomArticlesArray.push(newObj);
+                }
+                index++;
+            }
+            // console.log(this.randomArticlesArray);
+        },
+        getImagePath: function(img){
+            return new URL('./.' + img, import.meta.url).href;
         }
     },
     created(){
         this.filterAnimeListArray();
+        this.randomizeArticles();
     }
 }
 </script>
@@ -37,27 +54,11 @@ export default{
                 </div>
             </div>
             <div class="article-wrapper row flex-column">
-                <div class="col-8">
-                    <article class="border border-danger w-100">
-                        8
-                    </article>
-                </div>
-                <div class="col-4">
-                    <article class="border border-info w-100">
-                        A
+                <div v-for="(article, index) in randomArticlesArray" :key="article.index" :class="index === 0 ? 'col-8' : 'col-4'">
+                    <article class="border border-primary w-100">
+
                     </article>
                     <hr class="w-100 my-0">
-                </div>
-                <div class="col-4">
-                    <article class="border border-info w-100">
-                        B
-                    </article>
-                    <hr class="w-100 my-0">
-                </div>
-                <div class="col-4">
-                    <article class="border border-info w-100">
-                        C
-                    </article>
                 </div>
             </div>
         </div>
@@ -79,6 +80,10 @@ export default{
         article{
             height: 98%;
         }
+
+        hr {
+            display: none;
+        }
     }
 
     div.col-4 {
@@ -92,6 +97,10 @@ export default{
         article {
             height: 75%;
         }
+
+        hr {
+            opacity: 1;
+        }
     }
 
     div.col-4:last-child{
@@ -100,10 +109,10 @@ export default{
         article{
             height: 90%;
         }
+
+        hr {
+            display: none;
+        }
     }
 }
-
-    .div.row.article-wrapper > hr {
-        opacity: 0;
-    }
 </style>
