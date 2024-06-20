@@ -41,17 +41,17 @@ export default {
                 },
                 {
                     "id": 5,
-                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "url": "https://www.youtube.com/embed/i-L0Gs2whvc?si=l0W5h-d_jatBm0Pq",
                     "active": true,
                     "title": " You have no enemies.",
-                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                    "thumbnail": "https://img.youtube.com/vi/i-L0Gs2whvc/0.jpg"
                 },
                 {
                     "id": 6,
-                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "url": "https://www.youtube.com/embed/itKq_Qg-MHM?si=dMI4obUM4FjrUqqK",
                     "active": true,
                     "title": " You have no enemies.",
-                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                    "thumbnail": "https://img.youtube.com/vi/itKq_Qg-MHM/0.jpg"
                 },
                 {
                     "id": 7,
