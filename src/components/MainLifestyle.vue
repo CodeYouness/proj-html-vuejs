@@ -4,8 +4,18 @@ import { store } from '../store.js';
 export default{
     data(){
         return {
-            store
+            store,
+            lifestyleArray: [],
         }
+    },
+    methods: {
+        filterAnimeListArray: function(){
+            this.lifestyleArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle') || obj.category.includes('Stories'))
+            // console.log(this.lifestyleArray);
+        }
+    },
+    created(){
+        this.filterAnimeListArray();
     }
 }
 </script>
