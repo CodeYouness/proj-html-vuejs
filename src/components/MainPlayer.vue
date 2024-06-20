@@ -43,22 +43,22 @@ export default {
                     "id": 5,
                     "url": "https://www.youtube.com/embed/i-L0Gs2whvc?si=l0W5h-d_jatBm0Pq",
                     "active": true,
-                    "title": " You have no enemies.",
+                    "title": " Dio VS Jotaro",
                     "thumbnail": "https://img.youtube.com/vi/i-L0Gs2whvc/0.jpg"
                 },
                 {
                     "id": 6,
                     "url": "https://www.youtube.com/embed/itKq_Qg-MHM?si=dMI4obUM4FjrUqqK",
                     "active": true,
-                    "title": " You have no enemies.",
+                    "title": " Eren Transform",
                     "thumbnail": "https://img.youtube.com/vi/itKq_Qg-MHM/0.jpg"
                 },
                 {
                     "id": 7,
-                    "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
+                    "url": "https://www.youtube.com/embed/dFlDRhvM4L0?si=TUS6jG3ilK_zD98H",
                     "active": true,
-                    "title": " You have no enemies.",
-                    "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
+                    "title": " 『チェンソーマン』ノンクレジットオープニング / CHAINSAW MAN Opening│米津玄師 「KICK BACK」",
+                    "thumbnail": "https://img.youtube.com/vi/dFlDRhvM4L0/0.jpg"
                 },
             ],
             currentVideo: 'https://www.youtube.com/embed/r8eQDtOnUsY?si=iZQc1p_vPALSVHcY',
@@ -91,11 +91,19 @@ export default {
                         <h2 class="fs-6"> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
                     </div>
                 </div>
-                <div class="main overflow-y-auto rounded-end-2">
-                    <div class="d-flex border videos-list p-1" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
-                        <p class=" align-self-center mx-2 index-video text-white">{{ index }}</p>
-                        <img :src="link.thumbnail" alt="Thumbnail">
-                        <p class="align-self-center mx-2 title">{{ link.title }}</p>
+                <div class="main overflow-y-auto rounded-end-2 ">
+                    <div class="d-flex border videos-list align-items-center p-1" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
+                        <div class=" d-flex align-items-center justify-content-center index-wrapper">
+                            <p class=" mx-2 index-video text-white">{{ index }}</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img :src="link.thumbnail" alt="Thumbnail">
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center title-wrapper">
+                            <p class=" mx-2 title">{{ link.title }}</p>
+                        </div>
+
+                        
                     </div>
                 </div>
             </div>
@@ -133,7 +141,6 @@ img {
 }
 .title{
     font-size: 12px;
-    width: 50%;
 }
 .videos-list {
     &:hover {
@@ -147,5 +154,12 @@ img {
         }
         }
     }
-
+.videos-list{
+    max-height: 90px;
+}
+.index-wrapper,
+.title-wrapper{
+    padding-top: 10px;
+    
+}
 </style>
