@@ -62,11 +62,11 @@ export default {
                 </div>
 
                 <span class="left">
-                    <button @click="forwardPicCarousel" class="left fw-bolder px-2"><</button>
+                    <button @click="forwardPicCarousel" class="left fw-bolder px-3 py-2 border-0"><</button>
                 </span>
 
                 <span class="right">
-                    <button @click="nextPicCarousel" class="right fw-bolder px-2">></button>
+                    <button @click="nextPicCarousel" class="right fw-bolder px-3 py-2 border-0">></button>
                 </span>
 
             </div>
@@ -101,6 +101,15 @@ img {
 
 .custom-card {
     width: calc(25% - 1rem);
+}
+
+button {
+    color: $primary-color;
+}
+
+button:hover {
+    color: white;
+    background-color: $primary-color;
 }
 
 </style>
