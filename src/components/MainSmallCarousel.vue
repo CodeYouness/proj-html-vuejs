@@ -50,8 +50,10 @@ export default {
                         <img :src="pic.image" :alt="pic.id" class="card-img-top">
                         <div class="card-body">
                             <h2>
-                                {{ pic }}
+                                {{ pic.event_name }}
                             </h2>
+                            <p>{{ pic.location }}</p>
+                            <p>from {{ pic.start_date }} to {{ pic.end_date }}</p>
                         </div>
 
                     </div>
