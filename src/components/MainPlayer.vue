@@ -75,22 +75,27 @@ export default {
 </script>
 
 <template>
-    <section class="d-flex border container p-0">
-            <div class="w-75">
-                <iframe :src="currentVideo" title="YouTube video player" frameborder="0"
+    <section class="d-flex container p-0 ">
+            <div class="w-75 ">
+                <iframe :src="currentVideo" title="YouTube video player" frameborder="0" class="rounded-start-2"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="d-flex flex-column w-25 playlist">
-                <div class="border text-center header-playlist container-fluid">
-                    <h1>Video Playlist</h1>
-                    <h2> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
+            <div class="d-flex flex-column w-25 playlist ">
+                <div class="border  header-playlist container-fluid d-flex align-items-center rounded-end-2">
+                    <div class="me-4">
+                        <font-awesome-icon :icon="['fas', 'play']" class="fs-2 "/>
+                    </div>
+                    <div>
+                        <h2 class="fs-6">Video Playlist</h2>
+                        <h2 class="fs-6"> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
+                    </div>
                 </div>
-                <div class="main overflow-y-auto">
-                    <div class="d-flex border videos-list" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
+                <div class="main overflow-y-auto rounded-end-2">
+                    <div class="d-flex border videos-list p-1" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
                         <p class=" align-self-center mx-2 index-video text-white">{{ index }}</p>
                         <img :src="link.thumbnail" alt="Thumbnail">
-                        <p class="align-self-center mx-2">{{ link.title }}</p>
+                        <p class="align-self-center mx-2 title">{{ link.title }}</p>
                     </div>
                 </div>
             </div>
@@ -103,7 +108,6 @@ export default {
 section,
 .playlist{
     max-height: 550px;
-    
 }
 .header-playlist{
     height: 20%;
@@ -116,12 +120,32 @@ iframe{
     height: 100%;
 }
 img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 45px;
     border-radius: 20%;
 }
 .index-video {
     background-color: black;
-    border-radius: 20%;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    border-radius: 10%;
 }
+.title{
+    font-size: 12px;
+    width: 50%;
+}
+.videos-list {
+    &:hover {
+        .title {
+        color: red;
+        }
+        &:hover {
+            .index-video{
+                background-color: red; 
+            }
+        }
+        }
+    }
+
 </style>
