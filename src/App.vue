@@ -24,7 +24,7 @@ export default {
             .then((response) => {
                 // handle success
                 console.log(response.data);
-                this.store.animeList = response.data
+                this.store.apiList = response.data
             })
             .catch(function (error) {
                 // handle error
