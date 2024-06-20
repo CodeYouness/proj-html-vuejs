@@ -46,7 +46,7 @@ export default {
             <div class="d-flex justify-content-evenly position-relative">
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
-                    
+
                     <div class="measure">
                         <img :src="pic.image" :alt="pic.id" class="card-img-top">
                     </div>
@@ -62,11 +62,11 @@ export default {
                 </div>
 
                 <span class="left">
-                    <button @click="forwardPicCarousel" class="left"><</button>
+                    <button @click="forwardPicCarousel" class="left fw-bolder px-2"><</button>
                 </span>
 
                 <span class="right">
-                    <button @click="nextPicCarousel" class="right">></button>
+                    <button @click="nextPicCarousel" class="right fw-bolder px-2">></button>
                 </span>
 
             </div>
