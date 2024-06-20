@@ -41,21 +41,22 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex align-items-center">
-        <div class="container">
-            <div class="row d-flex position-relative">
+    <div class="d-flex align-items-center bg-light p-4">
+        <div class="w-100">
+            <div class="d-flex justify-content-evenly position-relative">
 
-                <div v-for="(pic,index) in currentArray" :key="index" class="col-3">
-                    <div class="card border-0">
+                <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
+                    
+                    <div class="measure">
                         <img :src="pic.image" :alt="pic.id" class="card-img-top">
-                        <div class="card-body">
-                            <h2>
-                                {{ pic.event_name }}
-                            </h2>
-                            <p>{{ pic.location }}</p>
-                            <p>from {{ pic.start_date }} to {{ pic.end_date }}</p>
-                        </div>
+                    </div>
 
+                    <div class="card-body text-center">
+                        <p class="card-text fw-bolder">
+                            {{ pic.event_name }}
+                        </p>
+                        <p class="card-text">{{ pic.location }}</p>
+                        <p class="card-text">from {{ pic.start_date }} to {{ pic.end_date }}</p>
                     </div>
 
                 </div>
@@ -81,7 +82,7 @@ export default {
     position: absolute;
     top: 50%;
     right: 10px;
-    transform: translate(0%, -50%);
+    transform: translateY(-50%);
     border-radius: 50%;
 }
 
@@ -91,6 +92,15 @@ export default {
     left: 10px;
     transform: translate(0%, -50%);
     border-radius: 50%;
+}
+
+img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.custom-card {
+    width: calc(25% - 1rem);
 }
 
 </style>
