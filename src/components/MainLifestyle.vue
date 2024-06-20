@@ -55,8 +55,13 @@ export default{
             </div>
             <div class="article-wrapper row flex-column">
                 <div v-for="(article, index) in randomArticlesArray" :key="article.index" :class="index === 0 ? 'col-8' : 'col-4'">
-                    <article class="border border-primary w-100">
-
+                    <article class="border border-primary w-100 d-flex">
+                        <div class="article-image" >
+                            <img :src="getImagePath(article.path)" :alt="article.title" class="w-100">
+                        </div>
+                        <div v-if="index != 0" class="article-info">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
                     </article>
                     <hr class="w-100 my-0">
                 </div>
@@ -79,6 +84,11 @@ export default{
 
         article{
             height: 98%;
+
+            // .article-image{
+            //     width: 100%;
+
+            // }
         }
 
         hr {
@@ -96,6 +106,10 @@ export default{
 
         article {
             height: 75%;
+
+            .article-image {
+                width: 45%;
+            }
         }
 
         hr {
