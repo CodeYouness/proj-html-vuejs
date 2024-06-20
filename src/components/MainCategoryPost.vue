@@ -55,14 +55,14 @@ export default {
     <div class="container-fluid mt-5 mb-1">
             <div class="d-flex row rounded">
                 <div  v-for="card in categoryCards" :key="card.id" class="col-2">
-                    <article class="h-100 d-flex align-items-center justify-content-center position-relative text-center">
+                    <article class="h-100 d-flex align-items-center justify-content-center position-relative">
                         <img :src="getImagePath(card.path)" :alt="card.title" class="h-100">
                         <div class="overlay position-absolute z-1 h-100 w-100">
-                            <p>ciao</p>
                         </div>
-                        <div class="article-info position-absolute z-2 h-100 w-100 d-flex flex-column justify-content-between text-white fw-bold">
-                                <div>
+                        <div class=" position-absolute z-2 h-100 w-100 justify-content-between ">
+                                <div class="content-wrap">
                                     <span class=" centered" > {{ card.category[0] }}</span>
+                                    <span class=" centered mt-5 active">3 Posts</span>
                                 </div>
                             </div>
                     </article>
@@ -97,6 +97,19 @@ article:hover .overlay {
     background-color: rgba(214, 11, 11, 0.534);
     transition: all .2s ease-out;
 }
-
-
+article:hover .content-wrap{
+    border: 1px solid white;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.active{
+    display: none;
+}
+article:hover .active{
+    display: block;
+}
 </style>
