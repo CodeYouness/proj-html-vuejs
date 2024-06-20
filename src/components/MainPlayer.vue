@@ -57,7 +57,7 @@ export default {
                     "id": 7,
                     "url": "https://www.youtube.com/embed/dFlDRhvM4L0?si=TUS6jG3ilK_zD98H",
                     "active": true,
-                    "title": " 『チェンソーマン』ノンクレジットオープニング / CHAINSAW MAN Opening│米津玄師 「KICK BACK」",
+                    "title": " CHAINSAW MAN Opening│米津玄師 「KICK BACK」",
                     "thumbnail": "https://img.youtube.com/vi/dFlDRhvM4L0/0.jpg"
                 },
             ],
