@@ -14,9 +14,6 @@ export default {
         store
     },
     methods:{
-        getImagePath(img) {
-            return new URL(img , import.meta.url).href;
-        },
         getFourCard(animeList) {
             this.currentArray = animeList.slice(0, 4);
             console.log(this.currentArray, this.store.apiList)
@@ -25,15 +22,15 @@ export default {
             this.currentArray.shift();
             this.currentArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
-            this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length
+            this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length;
             console.log(this.currentIndex)
         },
         forwardPicCarousel(){
             this.currentArray.pop();
             this.currentArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
-            this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length
-            console.log(this.backwardIndex)
+            this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
+            console.log(this.backwardIndex);
         }
     },
     created() {
@@ -45,19 +42,28 @@ export default {
 
 <template>
     <div class="d-flex align-items-center">
-        <div class="container position-relative">
-            <div class="row d-flex">
+        <div class="container">
+            <div class="row d-flex position-relative">
 
-                <li v-for="(pic,index) in currentArray" :key="index" class="card col-3">
-                    <img :src="pic.image" :alt="pic.id">
-                </li>
+                <div v-for="(pic,index) in currentArray" :key="index" class="col-3">
+                    <div class="card border-0">
+                        <img :src="pic.image" :alt="pic.id" class="card-img-top">
+                        <div class="card-body">
+                            <h2>
+                                {{ pic }}
+                            </h2>
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <span class="left">
-                    <button @click="forwardPicCarousel"><</button>
+                    <button @click="forwardPicCarousel" class="left"><</button>
                 </span>
 
                 <span class="right">
-                    <button @click="nextPicCarousel">></button>
+                    <button @click="nextPicCarousel" class="right">></button>
                 </span>
 
             </div>
@@ -69,16 +75,20 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-// .right {
-//     position: absolute;
-//     right: 0;
-//     border-radius: 50%;
-// }
+.right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0%, -50%);
+    border-radius: 50%;
+}
 
-// .left {
-//     position: absolute;
-//     left: 0;
-//     border-radius: 50%;
-// }
+.left {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0%, -50%);
+    border-radius: 50%;
+}
 
 </style>
