@@ -6,7 +6,7 @@ export default {
         return {
             store,
             currentIndex: 4,
-            backwardIndex: store.animeList.length - 1,
+            backwardIndex: store.apiList.length - 1,
             currentArray: []
         }
     },
@@ -23,17 +23,17 @@ export default {
         },
         nextPicCarousel(){
             this.currentArray.shift();
-            this.currentArray.push(this.store.animeList[this.currentIndex]);
-            this.currentIndex = (this.currentIndex + 1) % this.store.animeList.length;
+            this.currentArray.push(this.store.apiList[this.currentIndex]);
+            this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
         },
         forwardPicCarousel(){
             this.currentArray.pop();
-            this.currentArray.unshift(this.store.animeList[this.backwardIndex]);
-            this.backwardIndex = (this.backwardIndex - 1 + this.store.animeList.length) % this.store.animeList.length;
+            this.currentArray.unshift(this.store.apiList[this.backwardIndex]);
+            this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
         }
     },
     created() {
-        this.getFourCard(this.store.animeList)
+        this.getFourCard(this.store.apiList)
     }
 }
 
@@ -44,8 +44,8 @@ export default {
         <div class="row overflow-x-auto">
             <div class="d-flex flex-nowrap">
                 <button @click="forwardPicCarousel()"><</button>
-                <li v-for="pic in currentArray" :key="pic.id" class="card">
-                    <img :src="getImagePath(`.${pic.path}`)" :alt="pic.id">
+                <li v-for="(pic,index) in currentArray" :key="index" class="card">
+                    <img :src="pic.image" :alt="pic.id">
                 </li>
                 <button @click="nextPicCarousel()">></button>
             </div>
