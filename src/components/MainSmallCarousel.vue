@@ -33,7 +33,7 @@ export default {
             console.log(this.backwardIndex);
         }
     },
-    created() {
+    mounted() {
         this.getFourCard(this.store.apiList)
     }
 }
@@ -47,7 +47,7 @@ export default {
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
 
-                    <div class="measure">
+                    <div class="measure" >
                         <img :src="pic.image" :alt="pic.id" class="card-img-top">
                     </div>
 
