@@ -2,6 +2,8 @@
 export default {
     data() {
         return {
+            message: '',
+
             getStartedLinks: [
                 {
                     title: 'resources'
@@ -58,6 +60,13 @@ export default {
                     title: 'brand assets'
                 }
             ]
+            
+        }
+    },
+
+    methods: {
+        subSuccess() {
+            this.message = "Subscription successful!"
         }
     }
 }
@@ -70,36 +79,37 @@ export default {
             <section class="links mb-2">
             <nav>    
             <p class="text-light">get started</p>
-            <ul class="text-light" v-for="(link, index) in getStartedLinks" :key="index">
-                <li><a href="" class="text-light">{{ link.title }}</a></li>
+            <ul v-for="(link, index) in getStartedLinks" :key="index">
+                <li><a href="">{{ link.title }}</a></li>
             </ul>
             </nav>
              
             <nav>
             <p class="text-light">about</p>
-            <ul class="text-light" v-for="(link, index) in aboutLinks" :key="index">
-                <li><a href="" class="text-light">{{ link.title }}</a></li>
+            <ul v-for="(link, index) in aboutLinks" :key="index">
+                <li><a href="">{{ link.title }}</a></li>
             </ul>
             </nav>
 
             <nav>
             <p class="text-light">features</p>
-            <ul class="text-light" v-for="(link, index) in featuresLinks" :key="index">
-                <li><a href="" class="text-light">{{ link.title }}</a></li>
+            <ul v-for="(link, index) in featuresLinks" :key="index">
+                <li><a href="">{{ link.title }}</a></li>
             </ul>
             </nav>
              
             <nav>
             <p class="text-light">quick links</p>
-            <ul class="text-light" v-for="(link, index) in quickLinks" :key="index">
-                <li><a href="" class="text-light">{{ link.title }}</a></li>
+            <ul v-for="(link, index) in quickLinks" :key="index">
+                <li><a href="">{{ link.title }}</a></li>
             </ul>
             </nav>
 
             <div class="d-flex flex-column">
                 <p class="text-light">subscribe to newsletter</p>
-                <input type="email" id="email" placeholder="Email">
-                <button class="text-light">subscribe</button>
+                <input type="email" id="email" placeholder="Email" required>
+                <button @click="subSuccess">subscribe</button>
+                <p class="text-light mt-1 sub">{{ message }}</p>
             </div>
             
             </section>
@@ -156,10 +166,17 @@ export default {
         font-size: 20px;
     }
 
+    .sub {
+        font-size: 15px;
+        text-transform: none;
+        text-align: center;
+    }
+
     input {
         margin-top: 0.3rem;
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
+        border: none;
     }
 
     button {
@@ -170,6 +187,12 @@ export default {
         background-color: #545454;
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: $primary-color;
+        }
     }
 
 
@@ -186,9 +209,17 @@ export default {
 
         a {
             text-decoration: none;
+             color: white;
         }
+
+        a:hover {
+                  color: #545454;
+        }
+  
     }
 }
+
+
 
 .line {
     padding: 0.5px 0;
