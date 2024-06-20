@@ -95,7 +95,6 @@ export default{
             </div>
         </div>
     </section>
-    <MainLifestyle />
 </template>
 
 <style scoped lang="scss">
