@@ -41,7 +41,7 @@ export default {
         }
     },
     mounted() {
-        setInterval(this.nextPicCarousel, 5000)
+        setInterval(this.nextPicCarousel, 10000)
     }
 }
 </script>
