@@ -41,8 +41,9 @@ export default {
             }
         }
     },
-    mounted() {
+    created() {
         this.getFourCard(this.store.apiList)
+        setInterval(this.nextPicCarousel, 3000)
     }
 }
 
@@ -54,10 +55,8 @@ export default {
             <div class="d-flex justify-content-evenly position-relative">
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
-
-                    <div class="measure" >
-                        <img :src="pic.image" :alt="pic.id" class="card-img-top">
-                    </div>
+                    <img :src="pic.image" :alt="pic.id" class="card-img-top">
+                    
 
                     <div class="card-body text-center">
                         <p class="card-text fw-bolder">
