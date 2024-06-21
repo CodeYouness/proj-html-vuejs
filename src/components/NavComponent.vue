@@ -31,12 +31,12 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas m-0 d-flex justify-content-center w-75 offcanvas-start "
+                                class="offcanvas m-0 d-flex justify-content-center  w-50 offcanvas-start "
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
                                 >
-                                <div class="offcanvas-header my-5 ">
+                                <div class="offcanvas-header my-5 align-self-center">
                                     <img  class="offcanvas-title " id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
                                     <button
                                     type="button"
@@ -67,7 +67,7 @@ export default {
                                             <i class="fa-solid fa-phone-volume px-2"></i><span>(+82)8123 456 789</span>
                                         </li>
                                     </ul>
-                                    <ul class="nav d-flex justify-content-center zocial">
+                                    <ul class="nav d-flex justify-content-center  zocial">
                                         <li class="nav-item ">
                                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                         </li>
@@ -75,10 +75,10 @@ export default {
                                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-x-twitter"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-instagram"></i></a>
+                                            <a class="nav-link rounded-circle " href="#"><i class="fa-brands fa-instagram"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link rounded-circle " href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-youtube"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -104,9 +104,9 @@ export default {
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-suitcase"></i>
                                         lifestyle
                                         </a>
-                                        <ul class="dropdown-menu text-center">
+                                        <ul class="dropdown-menu text-center grande border border-0">
                                             <div class="wrapper p-4">
-                                                <li>
+                                                <li class="megapadding">
                                                     <div class="card border border-0 rounded m-2" style="width:20rem;">
                                                         <img src="../assets/visit-france.webp" class="card-img-top w-100" alt="...">
                                                         <div class="card-body">
@@ -130,7 +130,7 @@ export default {
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <li>
+                                                <li class="paddingr">
                                                     <div class="card border border-0 rounded m-2" style="width:20rem;">
                                                         <img src="../assets/anime-fashion.webp" class="card-img-top w-100" alt="...">
                                                         <div class="card-body">
@@ -140,17 +140,49 @@ export default {
                                                 </li>
                                             </div>
                                                 
-                                            </ul>
+                                        </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book-open-reader"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-suitcase"></i>
                                         stories
                                         </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
+                                        <ul class="dropdown-menu text-center grande border border-0">
+                                            <div class="wrapper2 p-4">
+                                                <li class="megapadding2">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/ideas-anime.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Live Ideas You Migth Be Anime</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/travel-alone.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Traveling Alone Is Awesome</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/success-story.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">The Best Succes Story</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="paddingr">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/best-places.webp" class="card-img-top w-100" alt="...">
+                                                            <div class="card-body">
+                                                                <p class="card-text">Place For A RoadTrip</p>
+                                                            </div>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                                
+                                        </ul>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book"></i>
@@ -197,16 +229,36 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+.megapadding2{
+    padding-left: 38rem;
+}
+
+.wrapper2{
+    background-color: #e0ddddf8;
+    display: flex;
+    position: relative;
+    left: -1300px;
+    
+}
+
+.megapadding{
+    padding-left: 36rem;
+}
+
+.paddingr{
+    padding-right: 38rem;
+}
+
 
 .dropdown:hover .dropdown-menu{
     display: block;
-    
-    
 }
 
 .wrapper{
     background-color: #e0ddddf8;
     display: flex;
+    position: relative;
+    left: -1150px;
     
 }
 
@@ -250,8 +302,12 @@ ul.zocial li a{
     background-color: $primary-color;
     color: white;
     margin: .3rem;
-    width: 38px;
-    padding: .4rem;
+    width: 33px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: .6rem .3rem;
+    padding-left: .5rem;
 }
 
 .zocial a:hover{
