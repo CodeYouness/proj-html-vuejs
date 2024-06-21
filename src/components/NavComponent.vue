@@ -31,16 +31,18 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas m-0 d-flex justify-content-center  w-50 offcanvas-start "
+                                class="offcanvas m-0 d-flex justify-content-center  canvas-width offcanvas-start "
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
                                 >
-                                <div class="offcanvas-header my-5">
+                                <div class="offcanvas-header my-5 justify-content-center first-position">
+                                    <div class="text-center">
                                     <img  class="offcanvas-title" id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
+                                    </div>
                                     <button
                                     type="button"
-                                    class="btn-close btn-close-white"
+                                    class="btn-close m-0"
                                     data-bs-dismiss="offcanvas"
                                     aria-label="Close"
                                     ></button>
@@ -48,7 +50,7 @@ export default {
                                 <div class="offcanvas-body  justify-content-center align-middle">
                                     <ul class="navbar-nav pe-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" aria-current="page" href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate hic amet nesciunt officiis, repudiandae doloribus </a>
+                                            <a class="nav-link text-center" aria-current="page" href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate hic amet nesciunt officiis, repudiandae doloribus </a>
                                         </li>
                                         <li class="nav-item d-flex justify-content-center">
                                             <a class="nav-link  " href="#"><img src="../assets/music-love.webp" alt="img"></a>
@@ -313,5 +315,30 @@ ul.zocial li a{
 .zocial a:hover{
     background-color:$background-color;
 
+}
+
+.first-position {
+    position: relative;
+
+    .btn-close {
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 0;
+        font-size: 20px;
+        bottom: 120px;
+        left: 575px;
+        background-color: $my_bg-darkgrey;
+        opacity: 1;
+
+        &:hover {
+           background-color: $primary-color;
+           border-color: white;
+           transition: .3s;
+        }
+    }
+}
+
+.canvas-width {
+    width: 30% !important;
 }
 </style>
