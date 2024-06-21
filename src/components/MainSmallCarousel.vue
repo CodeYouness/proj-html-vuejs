@@ -7,43 +7,38 @@ export default {
             store,
             currentIndex: 4,
             backwardIndex: store.apiList.length - 1,
-            currentArray: []
+        }
+    },
+    props: {
+        currentArray: {
+            type: Array,
+            required:true 
         }
     },
     components: {
         store
     },
     methods:{
-        getFourCard(animeList) {
-            this.currentArray = animeList.slice(0, 4);
-            console.log(this.currentArray, this.store.apiList)
-        },
         nextPicCarousel(){
             this.currentArray.shift();
             this.currentArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
             this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length;
-            console.log(this.currentIndex)
-            console.log(this.currentArray)
         },
         forwardPicCarousel(){
             this.currentArray.pop();
             this.currentArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
             this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
-            console.log(this.backwardIndex);
-            console.log(this.currentArray)
         },
         getClearedString(string){
             let clearedString = string.split(" ")
             clearedString.splice(clearedString.indexOf('convention'), 1)
-            console.log(clearedString)
             return clearedString
         }
     },
     mounted() {
-        setTimeout(this.getFourCard, 100, this.store.apiList)
-        setInterval(this.nextPicCarousel, 3000)
+        setInterval(this.nextPicCarousel, 5000)
     }
 }
 
@@ -59,16 +54,16 @@ export default {
                     <img :src="pic.image" :alt="pic.id" class="card-img-top">
 
                     <div class="card-img-overlay text-center pt-2">
-                        <span class="badge text-bg-light me-2" v-for="(word,index) in getClearedString(pic.type)" :key="index">{{ word }}</span>
+                        <span class="badge text-bg-light me-2" v-for="(word,identificator) in getClearedString(pic.type)" :key="identificator">{{ word }}</span>
                     </div>
                     
 
                     <div class="card-body text-center">
-                        <p class="card-text fw-bolder m-0">
+                        <a class="card-text fw-bolder m-0">
                             {{ pic.event_name }}
-                        </p>
+                        </a>
                         <p class="card-text m-0">{{ pic.location }}</p>
-                        <p class="card-text m-0">from {{ pic.start_date }} to {{ pic.end_date }}</p>
+                        <p class="card-text m-0">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
                     </div>
 
                 </div>
@@ -113,11 +108,21 @@ img {
 
 .custom-card {
     width: calc(25% - 1rem);
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 button {
     color: $primary-color;
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: $primary-color;
 }
 
 button:hover {
