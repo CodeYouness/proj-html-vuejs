@@ -33,10 +33,17 @@ export default {
             this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
             console.log(this.backwardIndex);
             console.log(this.currentArray)
+        },
+        getClearedString(string){
+            let clearedString = string.split(" ")
+            clearedString.splice(clearedString.indexOf('convention'), 1)
+            console.log(clearedString)
+            return clearedString
         }
     },
     mounted() {
-        this.getFourCard(this.store.apiList)
+        setTimeout(this.getFourCard, 100, this.store.apiList)
+        setInterval(this.nextPicCarousel, 3000)
     }
 }
 
@@ -49,16 +56,19 @@ export default {
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
 
-                    <div class="measure">
-                        <img :src="pic.image" :alt="pic.id" class="card-img-top">
+                    <img :src="pic.image" :alt="pic.id" class="card-img-top">
+
+                    <div class="card-img-overlay text-center pt-2">
+                        <span class="badge text-bg-light me-2" v-for="(word,index) in getClearedString(pic.type)" :key="index">{{ word }}</span>
                     </div>
+                    
 
                     <div class="card-body text-center">
-                        <p class="card-text fw-bolder">
+                        <p class="card-text fw-bolder m-0">
                             {{ pic.event_name }}
                         </p>
-                        <p class="card-text">{{ pic.location }}</p>
-                        <p class="card-text">from {{ pic.start_date }} to {{ pic.end_date }}</p>
+                        <p class="card-text m-0">{{ pic.location }}</p>
+                        <p class="card-text m-0">from {{ pic.start_date }} to {{ pic.end_date }}</p>
                     </div>
 
                 </div>
@@ -107,6 +117,7 @@ img {
 
 button {
     color: $primary-color;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 button:hover {

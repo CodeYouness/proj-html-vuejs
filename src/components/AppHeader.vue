@@ -11,6 +11,9 @@ export default {
     components: {
         NavComponent,
         HeaderSmallCarousel
+        NavComponent
+    },
+    methods:{
     }
 }
 </script>
@@ -21,7 +24,6 @@ export default {
             <div class="row">
                 <div class="col-9 m-0 d-flex align-middle ">
                     <HeaderSmallCarousel />
-                    
                 </div>
                 <div class="col-3 m-0 ">
                     <ul class="nav justify-content-end">
@@ -79,12 +81,12 @@ ul li a{
     color:$primary-color;
     margin: .3rem;
     background-color: white;
-    width: 42px;
+    width: 30px;
     display: flex;
     text-align: center;
     justify-content: center;
     vertical-align: middle;
-    padding: .8rem;
+    padding: .4rem;
 }
 .nav a:hover{
 background-color: $background-color;
