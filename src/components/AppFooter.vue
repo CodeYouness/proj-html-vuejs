@@ -192,6 +192,7 @@ export default {
         &:hover {
             background-color: white;
             color: $primary-color;
+            transition: 500ms;
         }
     }
 
@@ -213,7 +214,8 @@ export default {
         }
 
         a:hover {
-                  color: #545454;
+            color: #545454;
+            transition: 200ms;
         }
   
     }
