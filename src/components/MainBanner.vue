@@ -10,7 +10,7 @@ export default {
 <template>
 <div class="container-fluid">
     <div class="container">
-        <img src="../assets/header-banner.webp" alt="logo" class="w-100 py-4">
+        <img src="../assets/page-banner-1.webp" alt="logo" class="w-100 py-4">
     </div>
 </div>
 </template>
