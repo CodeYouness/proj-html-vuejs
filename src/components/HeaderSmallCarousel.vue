@@ -47,17 +47,19 @@ export default{
         carouselAutoScroll: function(){
             if(this.isHover = false){
                 this.startScrollInterval();
-                console.log(this.isHover);
+                // console.log(this.isHover);
             } else {
                 clearInterval(this.startScrollInterval);
-                console.log(this.isHover);
+                // console.log(this.isHover);
             }
         }
     },
     created(){
         this.getCarouselNews();
         this.startScrollInterval()
-        this.carouselAutoScroll();
+    },
+    updated(){
+        // this.carouselAutoScroll();
     }
 }
 </script>
@@ -67,15 +69,17 @@ export default{
         <div class="d-flex align-items-center justify-content-between text-uppercase text-white h-100">
             <div class="d-flex align-items-center h-100">
                 <div class="news-head d-flex align-items-center h-100 fw-bold px-3">
-                    <p class="mb-0">news update</p>
+                    <p class="mb-0" >news update</p>
                 </div>
                 <template v-for="(news, index) in this.carouselNews" :key="news.id">
                     <div class="news-body d-flex align-items-center h-100" v-if="index === this.activeIndex">
                         <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2">
-                        <template v-for="(time, index) in this.carouselNewsTime" :key="index">
-                            <span v-if="index === this.activeIndex" class="me-2" @mouseover="isHover = true" @mouseleave="this.isHover = false"> {{ time }} </span>
-                        </template>
-                        <span class="news-title" @mouseover="this.isHover = true" @mouseleave="isHover = false">{{ news.title }}</span>
+                        <div class="d-flex align-items-center">
+                            <template v-for="(time, index) in this.carouselNewsTime" :key="index">
+                                <span v-if="index === this.activeIndex" class="me-2"> {{ time }} </span>
+                            </template>
+                            <span class="news-title typingEffect d-inline-block">{{ news.title }}</span>
+                        </div>
                     </div>
                 </template>
                 
@@ -113,5 +117,17 @@ img {
 .news-title:hover,
 .carousel-icon:hover {
     color: $background-color;
+}
+
+.typingEffect {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation: typing 1s steps(80) forwards;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
 }
 </style>
