@@ -3,5 +3,11 @@ $primary-color: #bf1d2e;
 $secondary-color: #f3f3f3;
 $background-color: #333333;
 $my_bg-darkgrey: #545454;
-$offcanvas-horizontal-width:1000px;
+$my_bg-lightgrey: #f3f3f3;
+$offcanvas-horizontal-width: 1000px;
 
+.btn-color {
+    color: $primary-color;
+    background-color: $my_bg-lightgrey;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}

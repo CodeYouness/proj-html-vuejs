@@ -46,16 +46,16 @@ export default {
 </script>
 
 <template>
-<div class="d-flex align-items-center bg-light p-4">
+<div class="d-flex align-items-center p-4">
         <div class="container">
             <div class="d-flex justify-content-between mb-3">
                 <h3 class="text-uppercase fw-bold">featured posts</h3>
                 <div>
-                    <button @click="forwardPicCarousel" class="left fw-bolder px-3 py-2 border-0 me-3"><</button>
-                    <button @click="nextPicCarousel" class="left fw-bolder px-3 py-2 border-0">></button>
+                    <button @click="forwardPicCarousel" class="rounded-circle fw-bolder px-3 py-2 border-0 me-3 btn-color"><</button>
+                    <button @click="nextPicCarousel" class="rounded-circle fw-bolder px-3 py-2 border-0 btn-color">></button>
                 </div>
             </div>
-            <div class="d-flex justify-content-evenly position-relative">
+            <div class="d-flex justify-content-between position-relative">
 
                 <div v-for="(pic,index) in newArray" :key="index" class="custom-card card border-0">
 
@@ -66,12 +66,13 @@ export default {
                     </div>
                     
 
-                    <div class="card-body text-center">
+                    <div class="card-body text-center bg-light">
                         <a class="card-text fw-bolder m-0">
                             {{ pic.event_name }}
                         </a>
-                        <p class="card-text m-0">{{ pic.location }}</p>
-                        <p class="card-text m-0">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
+                        <p class="card-text">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim numquam...</p>
+                        <button type="button" class="btn btn-danger rounded-pill px-5">Read more</button>
                     </div>
 
                 </div>
@@ -85,23 +86,14 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-.left {
-    border-radius: 50%;
-}
-
 img {
     height: 250px;
     object-fit: cover;
 }
 
 .custom-card {
-    width: calc(100% / 3 - 1rem);
+    width: calc(100% / 3 - 0.5rem);
     transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-button {
-    color: $primary-color;
-    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 a {
