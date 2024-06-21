@@ -49,7 +49,7 @@ export default {
 <template>
     <div class="d-flex align-items-center bg-light p-4">
         <div class="w-100">
-            <transition-group tag="div" name="fade" class="d-flex justify-content-evenly position-relative">
+            <div class="d-flex justify-content-evenly position-relative">
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
 
@@ -78,7 +78,7 @@ export default {
                     <button @click="nextPicCarousel" class="right fw-bolder px-3 py-2 border-0">></button>
                 </span>
 
-            </transition-group>
+            </div>
         </div>
     </div>
 </template>
