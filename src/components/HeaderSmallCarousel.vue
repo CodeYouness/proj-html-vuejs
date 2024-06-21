@@ -9,7 +9,8 @@ export default{
             carouselNewsIds: [1, 2, 3, 4],
             carouselNewsTime: ['05:37', '05:35', '05:32', '05:29'],
             carouselNews: [],
-            activeIndex: 0
+            activeIndex: 0,
+            isHover: false
         }
     },
     methods: {
@@ -18,7 +19,7 @@ export default{
         },
         getCarouselNews: function(){
             this.carouselNews = this.store.animeList.filter((obj) => this.carouselNewsIds.includes(obj.id));            
-            console.log(this.carouselNews);
+            // console.log(this.carouselNews);
         },
         nextNews: function(){           
             if(this.activeIndex < this.carouselNews.length - 1){
@@ -34,7 +35,7 @@ export default{
                 this.activeIndex--;
             }
         },
-        carouselAutoScroll: function(){
+        startScrollInterval: function (){
             setInterval(() => {
                 if(this.activeIndex < this.carouselNews.length - 1){
                     this.activeIndex++;
@@ -42,10 +43,20 @@ export default{
                     this.activeIndex = 0;
                 }
             }, 7000);
+        },
+        carouselAutoScroll: function(){
+            if(this.isHover = false){
+                this.startScrollInterval();
+                console.log(this.isHover);
+            } else {
+                clearInterval(this.startScrollInterval);
+                console.log(this.isHover);
+            }
         }
     },
     created(){
         this.getCarouselNews();
+        this.startScrollInterval()
         this.carouselAutoScroll();
     }
 }
@@ -62,9 +73,9 @@ export default{
                     <div class="news-body d-flex align-items-center h-100" v-if="index === this.activeIndex">
                         <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2">
                         <template v-for="(time, index) in this.carouselNewsTime" :key="index">
-                            <span v-if="index === this.activeIndex" class="me-2"> {{ time }} </span>
+                            <span v-if="index === this.activeIndex" class="me-2" @mouseover="isHover = true" @mouseleave="this.isHover = false"> {{ time }} </span>
                         </template>
-                        <span>{{ news.title }}</span>
+                        <span class="news-title" @mouseover="this.isHover = true" @mouseleave="isHover = false">{{ news.title }}</span>
                     </div>
                 </template>
                 
@@ -94,8 +105,13 @@ img {
     object-fit: cover;
 }
 
-.carousel-icon {
+.carousel-icon,
+.news-title {
     cursor: pointer;
 }
 
+.news-title:hover,
+.carousel-icon:hover {
+    color: $background-color;
+}
 </style>
