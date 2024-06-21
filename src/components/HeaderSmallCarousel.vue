@@ -34,9 +34,19 @@ export default{
                 this.activeIndex--;
             }
         },
+        carouselAutoScroll: function(){
+            setInterval(() => {
+                if(this.activeIndex < this.carouselNews.length - 1){
+                    this.activeIndex++;
+                } else {
+                    this.activeIndex = 0;
+                }
+            }, 7000);
+        }
     },
     created(){
         this.getCarouselNews();
+        this.carouselAutoScroll();
     }
 }
 </script>
