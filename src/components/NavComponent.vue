@@ -3,11 +3,14 @@ import { store } from "../store";
 
 export default {
     data() {
+        
         return {
-            store
+            store,
+            
         }
     },
 }
+
 </script>
 
 <template>
@@ -102,6 +105,7 @@ export default {
                                         lifestyle
                                         </a>
                                         <ul class="dropdown-menu text-center">
+                                            <div class="wrapper p-4">
                                                 <li>
                                                     <div class="card border border-0 rounded m-2" style="width:20rem;">
                                                         <img src="../assets/visit-france.webp" class="card-img-top w-100" alt="...">
@@ -113,9 +117,9 @@ export default {
                                                 <li>
                                                     <div class="card border border-0 rounded m-2" style="width:20rem;">
                                                         <img src="../assets/best-places.webp" class="card-img-top w-100" alt="...">
-                                                        <div class="card-body">
-                                                            <p class="card-text">Place For A RoadTrip</p>
-                                                        </div>
+                                                            <div class="card-body">
+                                                                <p class="card-text">Place For A RoadTrip</p>
+                                                            </div>
                                                     </div>
                                                 </li>
                                                 <li>
@@ -130,10 +134,12 @@ export default {
                                                     <div class="card border border-0 rounded m-2" style="width:20rem;">
                                                         <img src="../assets/anime-fashion.webp" class="card-img-top w-100" alt="...">
                                                         <div class="card-body">
-                                                            <p class="card-text">Fashion Trend Now A Days</p>
+                                                        <p class="card-text">Fashion Trend Now A Days</p>
                                                         </div>
                                                     </div>
                                                 </li>
+                                            </div>
+                                                
                                             </ul>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -169,13 +175,14 @@ export default {
                 <div class="">
                     <nav class="navbar navbar-expand-sm">
                         <div class="container">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button  class="navbar-toggler"  type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                    <a class="nav-link search" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                        <a class="nav-link search" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -191,9 +198,22 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-    li a:hover{
+.dropdown:hover .dropdown-menu{
+    display: block;
+    
+    
+}
+
+.wrapper{
+    background-color: #e0ddddf8;
+    display: flex;
+    
+}
+
+li a:hover{
     color: $primary-color;
     transition: .4s;
+    display: block;
 }
 
 a :active{
@@ -214,6 +234,16 @@ li a img{
     width: 160px;
     margin: .3rem;
     border-radius: .4rem;
+}
+
+li a{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+a.search i{
+    font-size: 1.5rem;
 }
 
 ul.zocial li a{
