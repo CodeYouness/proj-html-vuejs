@@ -4,7 +4,8 @@ import { store } from "../store";
 export default {
     data() {
         return {
-            store
+            store , 
+            hover : false 
         }
     },
 }
@@ -54,7 +55,7 @@ export default {
                                         </li>
                                     </ul>
                                     <ul class="navbar-nav   pe-3 my-3">
-                                        <li class="nav-item d-flex justify-content-center my-2">
+                                        <li class="nav-item  my-2">
                                             <i class="fa-solid fa-clock px-2"></i><span> Sun - Sat: 9:00 AM - 18:00 PM</span>
                                         </li>
                                         <li class="nav-item d-flex justify-content-center my-2">
@@ -98,10 +99,10 @@ export default {
                                     <a class="nav-link" href="#"><i class="fa-solid fa-user"></i>about us</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-suitcase"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-suitcase" ></i>
                                         lifestyle
                                         </a>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu " >
                                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                                 <li><hr class="dropdown-divider"></li>
@@ -110,19 +111,19 @@ export default {
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book-open-reader"></i>
-                                        stories
+                                        stories!
                                         </a>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu" >
                                                 <li><a class="dropdown-item" href="#">Action</a></li>
                                                 <li><a class="dropdown-item" href="#">Another action</a></li>
                                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                                             </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book" ></i>
                                         pages
                                         </a>
-                                            <ul class="dropdown-menu">
+                                            <ul class="dropdown-menu" >
                                                 <li><a class="dropdown-item " href="#"><i class="fa-solid fa-magnifying-glass"></i>search resoults</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-box-archive"></i>category archive</a></li>
                                                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i>author archive</a></li>
@@ -163,6 +164,9 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
+
+
+
     li a:hover{
     color: $primary-color;
     transition: .4s;
@@ -192,5 +196,8 @@ ul.zocial li a{
     a:hover{
         background-color:$background-color;
     }
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
 }
 </style>
