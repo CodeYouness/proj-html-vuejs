@@ -33,6 +33,14 @@ export default {
             console.log(this.backwardIndex);
         }
     },
+    watch: {
+        'store.apiList': {
+            immediate: true,
+            handler() {
+                this.getFourCard(this.store.apiList);
+            }
+        }
+    },
     mounted() {
         this.getFourCard(this.store.apiList)
     }
