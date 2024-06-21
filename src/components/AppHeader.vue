@@ -51,7 +51,7 @@ export default {
                     
                 </div>
                 <div class="col-8 banner">
-                    <img class="w-100 mt-3 mb-3 rounded" src="../assets/header-banner-300x38.webp" alt="banner">
+                    <img class="w-100 mt-3 mb-3 rounded" src="../assets/header-banner.webp" alt="banner">
                 </div>
             </div>
         </div>
