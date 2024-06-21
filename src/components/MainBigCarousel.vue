@@ -5,13 +5,12 @@ export default {
     data() {
         return {
             store,
-            currentIndex: 4,
+            currentIndex: 3,
             backwardIndex: store.apiList.length - 1,
-            currentArray: []
         }
     },
     props: {
-        animeFigure: {
+        newArray: {
             type: Object,
             required:true 
         }
@@ -21,17 +20,17 @@ export default {
     },
     methods:{
         nextPicCarousel(){
-            this.currentArray.shift();
-            this.currentArray.push(this.store.apiList[this.currentIndex]);
+            this.newArray.shift();
+            this.newArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
-            this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length;
+            this.backwardIndex = (this.currentIndex - 3 + this.store.apiList.length ) % this.store.apiList.length;
             console.log(this.currentArray)
         },
         forwardPicCarousel(){
-            this.currentArray.pop();
-            this.currentArray.unshift(this.store.apiList[this.backwardIndex]);
+            this.newArray.pop();
+            this.newArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
-            this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
+            this.currentIndex = (this.backwardIndex + 3) % this.store.apiList.length;
             console.log(this.currentArray)
         },
         getClearedString(string){
@@ -58,7 +57,7 @@ export default {
             </div>
             <div class="d-flex justify-content-evenly position-relative">
 
-                <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
+                <div v-for="(pic,index) in newArray" :key="index" class="custom-card card border-0">
 
                     <img :src="pic.image" :alt="pic.id" class="card-img-top">
 

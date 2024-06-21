@@ -13,8 +13,8 @@ export default {
     data() {
         return {
             store,
-            animeFigure: [],
-            currentArray: []
+            currentArray: [],
+            newArray: []
         }
     },
     components: {
@@ -33,7 +33,8 @@ export default {
                 // handle success
                 console.log(response.data);
                 this.store.apiList = response.data;
-                this.animeFigure = response.data
+                this.getFourCard(this.store.apiList);
+                this.getThreeCard(this.store.apiList);
             })
             .catch(function (error) {
                 // handle error
@@ -44,13 +45,14 @@ export default {
             this.currentArray = animeList.slice(0, 4);
             console.log(this.currentArray)
         },
+        getThreeCard(animeList) {
+            this.newArray = animeList.slice(0, 3);
+            console.log(this.newArray)
+        }
     },
     created(){
         this.getAnimeList();
     },
-    mounted(){
-        this.getFourCard(this.store.apiList);
-    }
 }
 </script>
 
@@ -60,7 +62,7 @@ export default {
     <MainJumbotron/>
     <MainLifestyle/>
     <MainBanner/>
-    <MainBigCarousel :animeFigure="animeFigure"/>
+    <MainBigCarousel :newArray="newArray"/>
     <MainPlayer/>
     <MainCategoryPost/>
 

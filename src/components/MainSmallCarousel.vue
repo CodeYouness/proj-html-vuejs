@@ -24,14 +24,12 @@ export default {
             this.currentArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
             this.backwardIndex = (this.currentIndex - 4 + this.store.apiList.length ) % this.store.apiList.length;
-            console.log(this.currentArray)
         },
         forwardPicCarousel(){
             this.currentArray.pop();
             this.currentArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
             this.currentIndex = (this.backwardIndex + 4) % this.store.apiList.length;
-            console.log(this.currentArray)
         },
         getClearedString(string){
             let clearedString = string.split(" ")
