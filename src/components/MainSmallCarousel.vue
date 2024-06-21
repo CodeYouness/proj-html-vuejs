@@ -7,6 +7,8 @@ export default {
             store,
             currentIndex: 4,
             backwardIndex: store.apiList.length - 1,
+            isAutoScrollActive: false,
+            carouselClock: null
         }
     },
     props: {
@@ -35,17 +37,29 @@ export default {
             let clearedString = string.split(" ")
             clearedString.splice(clearedString.indexOf('convention'), 1)
             return clearedString
+        },
+        startCarouselClock: function (){
+            if(this.isAutoScrollActive === false){
+                this.carouselClock = setInterval(this.nextPicCarousel, 5000);
+                this.isAutoScrollActive = true; 
+            }
+        },
+        stopCarouselClock: function (){
+            if(this.isAutoScrollActive === true){
+                clearInterval(this.carouselClock);
+                this.isAutoScrollActive = false; 
+            }
         }
     },
     mounted() {
-        setInterval(this.nextPicCarousel, 5000)
+        this.startCarouselClock()
     }
 }
 
 </script>
 
 <template>
-    <div class="d-flex align-items-center bg-light p-4">
+    <div class="d-flex align-items-center bg-light p-4" @mouseover="stopCarouselClock()" @mouseleave="startCarouselClock()">
         <div class="w-100">
             <div class="d-flex justify-content-evenly position-relative">
 
