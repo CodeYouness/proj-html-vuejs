@@ -42,7 +42,7 @@ export default {
         }
     },
     mounted() {
-        setTimeout(this.getFourCard, 100, this.store.apiList)
+        setTimeout(this.getFourCard, 1000, this.store.apiList)
         setInterval(this.nextPicCarousel, 3000)
     }
 }
