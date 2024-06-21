@@ -52,14 +52,14 @@ export default {
 <template>
     <div class="d-flex align-items-center bg-light p-4">
         <div class="w-100">
-            <div class="d-flex justify-content-evenly position-relative">
+            <transition-group tag="div" name="fade" class="d-flex justify-content-evenly position-relative">
 
                 <div v-for="(pic,index) in currentArray" :key="index" class="custom-card card border-0">
 
                     <img :src="pic.image" :alt="pic.id" class="card-img-top">
 
                     <div class="card-img-overlay text-center pt-2">
-                        <span class="badge text-bg-light me-2" v-for="(word,index) in getClearedString(pic.type)" :key="index">{{ word }}</span>
+                        <span class="badge text-bg-light me-2" v-for="(word,identificator) in getClearedString(pic.type)" :key="identificator">{{ word }}</span>
                     </div>
                     
 
@@ -68,7 +68,7 @@ export default {
                             {{ pic.event_name }}
                         </p>
                         <p class="card-text m-0">{{ pic.location }}</p>
-                        <p class="card-text m-0">from {{ pic.start_date }} to {{ pic.end_date }}</p>
+                        <p class="card-text m-0">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
                     </div>
 
                 </div>
@@ -81,7 +81,7 @@ export default {
                     <button @click="nextPicCarousel" class="right fw-bolder px-3 py-2 border-0">></button>
                 </span>
 
-            </div>
+            </transition-group>
         </div>
     </div>
 </template>
@@ -113,6 +113,7 @@ img {
 
 .custom-card {
     width: calc(25% - 1rem);
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 button {
