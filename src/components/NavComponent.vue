@@ -36,8 +36,8 @@ export default {
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
                                 >
-                                <div class="offcanvas-header my-5 align-self-center">
-                                    <img  class="offcanvas-title " id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
+                                <div class="offcanvas-header my-5">
+                                    <img  class="offcanvas-title" id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
                                     <button
                                     type="button"
                                     class="btn-close btn-close-white"
