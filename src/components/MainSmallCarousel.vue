@@ -36,7 +36,8 @@ export default {
         }
     },
     mounted() {
-        this.getFourCard(this.store.apiList)
+        setTimeout(this.getFourCard, 100, this.store.apiList)
+        console.log(this.currentArray)
     }
 }
 
