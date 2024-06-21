@@ -20,6 +20,9 @@ library.add(faFacebookF, faStar, faUser, faCalendarDays, faPlay, faCopyright, fa
 
 
 
+
+
+
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
     .mount('#app')

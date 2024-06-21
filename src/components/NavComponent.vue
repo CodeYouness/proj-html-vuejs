@@ -3,20 +3,23 @@ import { store } from "../store";
 
 export default {
     data() {
+        
         return {
-            store
+            store,
+            
         }
     },
 }
+
 </script>
 
 <template>
     <section>
         <div class="container ">
-            <div class="row ">
-                <div class="col-2">
+            <div class="d-flex justify-content-between  ">
+                <div class="">
                     <nav class="navbar">
-                        <div class="container-fluid">
+                        <div class="container-fluid ">
                             <button
                             class="navbar-toggler"
                             type="button"
@@ -28,13 +31,13 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas m-0 d-flex justify-content-center offcanvas-start"
+                                class="offcanvas m-0 d-flex justify-content-center  w-50 offcanvas-start "
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
                                 >
-                                <div class="offcanvas-header my-5 ">
-                                    <img  class="offcanvas-title " id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
+                                <div class="offcanvas-header my-5">
+                                    <img  class="offcanvas-title" id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
                                     <button
                                     type="button"
                                     class="btn-close btn-close-white"
@@ -64,7 +67,7 @@ export default {
                                             <i class="fa-solid fa-phone-volume px-2"></i><span>(+82)8123 456 789</span>
                                         </li>
                                     </ul>
-                                    <ul class="nav d-flex justify-content-center zocial">
+                                    <ul class="nav d-flex justify-content-center  zocial">
                                         <li class="nav-item ">
                                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                         </li>
@@ -72,10 +75,10 @@ export default {
                                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-x-twitter"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-instagram"></i></a>
+                                            <a class="nav-link rounded-circle " href="#"><i class="fa-brands fa-instagram"></i></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link rounded-circle " href="#"><i class="fa-brands fa-youtube"></i></a>
+                                            <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-youtube"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -83,7 +86,7 @@ export default {
                         </div>
                     </nav>
                 </div>
-                <div class="col-8  d-flex">
+                <div class="">
                     <nav class="navbar navbar-expand-sm ">
                         <div class="container ">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,31 +95,94 @@ export default {
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="#"><i class="fa-solid fa-house"></i>Home</a>
+                                    <a class="nav-link " aria-current="page" href="#"><i class="fa-solid fa-house"></i>Home</a>
                                     </li>
                                     <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fa-solid fa-user"></i>about us</a>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="fa-solid fa-suitcase"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-suitcase"></i>
                                         lifestyle
                                         </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><hr class="dropdown-divider"></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
+                                        <ul class="dropdown-menu text-center grande border border-0">
+                                            <div class="wrapper p-4">
+                                                <li class="megapadding">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/visit-france.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Reasons To Visit France</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/best-places.webp" class="card-img-top w-100" alt="...">
+                                                            <div class="card-body">
+                                                                <p class="card-text">Place For A RoadTrip</p>
+                                                            </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/music-love.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Music The Love Of My Life</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="paddingr">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/anime-fashion.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                        <p class="card-text">Fashion Trend Now A Days</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                                
+                                        </ul>
                                     </li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book-open-reader"></i>
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-suitcase"></i>
                                         stories
                                         </a>
-                                            <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                            </ul>
+                                        <ul class="dropdown-menu text-center grande border border-0">
+                                            <div class="wrapper2 p-4">
+                                                <li class="megapadding2">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/ideas-anime.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Live Ideas You Migth Be Anime</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/travel-alone.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">Traveling Alone Is Awesome</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/success-story.webp" class="card-img-top w-100" alt="...">
+                                                        <div class="card-body">
+                                                            <p class="card-text">The Best Succes Story</p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="paddingr">
+                                                    <div class="card border border-0 rounded m-2" style="width:20rem;">
+                                                        <img src="../assets/best-places.webp" class="card-img-top w-100" alt="...">
+                                                            <div class="card-body">
+                                                                <p class="card-text">Place For A RoadTrip</p>
+                                                            </div>
+                                                    </div>
+                                                </li>
+                                            </div>
+                                                
+                                        </ul>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-book"></i>
@@ -138,16 +204,17 @@ export default {
                         </div>
                     </nav>
                 </div>
-                <div class="col-2">
+                <div class="">
                     <nav class="navbar navbar-expand-sm">
                         <div class="container">
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <button  class="navbar-toggler"  type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li class="nav-item">
-                                    <a class="nav-link search" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                                        <a class="nav-link search" aria-current="page" href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -162,17 +229,53 @@ export default {
 <style scoped lang="scss">
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+.megapadding2{
+    padding-left: 38rem;
+}
 
-    li a:hover{
+.wrapper2{
+    background-color: #e0ddddf8;
+    display: flex;
+    position: relative;
+    left: -1300px;
+    
+}
+
+.megapadding{
+    padding-left: 36rem;
+}
+
+.paddingr{
+    padding-right: 38rem;
+}
+
+
+.dropdown:hover .dropdown-menu{
+    display: block;
+}
+
+.wrapper{
+    background-color: #e0ddddf8;
+    display: flex;
+    position: relative;
+    left: -1150px;
+    
+}
+
+li a:hover{
     color: $primary-color;
     transition: .4s;
+    display: block;
 }
-li a:active{
+
+a :active{
     color: $primary-color;
 }
 
 ul li a i{
     padding-right: .4rem;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
@@ -185,15 +288,30 @@ li a img{
     border-radius: .4rem;
 }
 
-.offcanvas{
-    
+li a{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+a.search i{
+    font-size: 1.5rem;
 }
 
 ul.zocial li a{
     background-color: $primary-color;
     color: white;
-    a:hover{
-        background-color:$background-color;
-    }
+    margin: .3rem;
+    width: 33px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    padding: .6rem .3rem;
+    padding-left: .5rem;
+}
+
+.zocial a:hover{
+    background-color:$background-color;
+
 }
 </style>
