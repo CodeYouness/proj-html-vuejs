@@ -17,30 +17,36 @@ export default{
             switch (this.radioValue){
                 case 'lifestyle':
                     this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle'));
-                    this.visibleArticlesArray = this.filteredArray;
+                    this.randomizeArticles(this.filteredArray);
                     break;
                 case 'stories':
                     this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Stories'))
-                    this.visibleArticlesArray = this.filteredArray;
+                    this.randomizeArticles(this.filteredArray);
                     break;
                 default:
                     this.filteredArray = this.store.animeList.filter((obj) => obj.category.includes('Lifestyle') || obj.category.includes('Stories'));
-                    this.randomizeArticles(this.filteredArray,);
-                    this.visibleArticlesArray = this.randomArticlesArray;
+                    this.randomizeArticles(this.filteredArray);
+                    
             }
             // console.log(this.filteredArray);
         },
         randomizeArticles: function(originalArray){
-            let index = 0;
-            while (this.randomArticlesArray.length < 4){
-                const randomNumber = Math.floor(Math.random() * originalArray.length);
-                const newObj = this.filteredArray[randomNumber];
-                if(!(this.randomArticlesArray.includes(newObj))){
-                    this.randomArticlesArray.push(newObj);
+            if(originalArray.length > 4){
+                let index = 0;
+                while (this.randomArticlesArray.length < 4){
+                    const randomNumber = Math.floor(Math.random() * originalArray.length);
+                    const newObj = originalArray[randomNumber];
+                    if(!(this.randomArticlesArray.includes(newObj))){
+                        this.randomArticlesArray.push(newObj);
+                    }
+                    index++;
                 }
-                index++;
+            } else {
+                this.randomArticlesArray = originalArray;
             }
-            // console.log(this.randomArticlesArray);
+
+            this.visibleArticlesArray = this.randomArticlesArray;
+            // console.log(this.visibleArticlesArray);
         },
         getImagePath: function(img){
             return new URL('./.' + img, import.meta.url).href;
