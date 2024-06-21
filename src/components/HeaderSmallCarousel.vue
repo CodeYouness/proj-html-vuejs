@@ -10,7 +10,8 @@ export default{
             carouselNewsTime: ['05:37', '05:35', '05:32', '05:29'],
             carouselNews: [],
             activeIndex: 0,
-            isHover: false
+            isAutoScrollActive: false,
+            carouselClock: null
         }
     },
     methods: {
@@ -35,28 +36,22 @@ export default{
                 this.activeIndex--;
             }
         },
-        startScrollInterval: function (){
-            setInterval(() => {
-                if(this.activeIndex < this.carouselNews.length - 1){
-                    this.activeIndex++;
-                } else {
-                    this.activeIndex = 0;
-                }
-            }, 7000);
+        startCarouselClock: function (){
+            if(this.isAutoScrollActive === false){
+                this.carouselClock = setInterval(this.nextNews, 7000);
+                this.isAutoScrollActive = true; 
+            }
         },
-        carouselAutoScroll: function(){
-            if(this.isHover = false){
-                this.startScrollInterval();
-                // console.log(this.isHover);
-            } else {
-                clearInterval(this.startScrollInterval);
-                // console.log(this.isHover);
+        stopCarouselClock: function (){
+            if(this.isAutoScrollActive === true){
+                clearInterval(this.carouselClock);
+                this.isAutoScrollActive = false; 
             }
         }
     },
     created(){
         this.getCarouselNews();
-        this.startScrollInterval()
+        this.startCarouselClock()
     },
     updated(){
         // this.carouselAutoScroll();
@@ -77,7 +72,7 @@ export default{
                             <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2 fade-in-image">
                             <font-awesome-icon class="image-icon position-absolute" icon="fa-solid fa-caret-right" />
                         </div>
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center" @mouseover="stopCarouselClock()" @mouseleave="startCarouselClock()">
                             <template v-for="(time, index) in this.carouselNewsTime" :key="index">
                                 <span v-if="index === this.activeIndex" class="me-2"> {{ time }} </span>
                             </template>
