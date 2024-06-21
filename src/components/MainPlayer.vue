@@ -75,7 +75,7 @@ export default {
 </script>
 
 <template>
-    <section class="d-flex container p-0 ">
+    <section class="d-flex container">
             <div class="w-75 ">
                 <iframe :src="currentVideo" title="YouTube video player" frameborder="0" class="rounded-start-2"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
