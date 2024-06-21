@@ -19,7 +19,21 @@ export default{
         getCarouselNews: function(){
             this.carouselNews = this.store.animeList.filter((obj) => this.carouselNewsIds.includes(obj.id));            
             console.log(this.carouselNews);
-        }
+        },
+        nextNews: function(){           
+            if(this.activeIndex < this.carouselNews.length - 1){
+                this.activeIndex++;
+            } else {
+                this.activeIndex = 0;
+            }
+        },
+        prevNews: function(){
+            if(this.activeIndex === 0){
+                this.activeIndex = this.carouselNews.length - 1
+            } else {
+                this.activeIndex--;
+            }
+        },
     },
     created(){
         this.getCarouselNews();
@@ -36,7 +50,7 @@ export default{
                 </div>
                 <template v-for="(news, index) in this.carouselNews" :key="news.id">
                     <div class="news-body d-flex align-items-center h-100" v-if="index === this.activeIndex">
-                        <img src="../assets/meal-time-150x150.webp" alt="" class="h-100 me-2">
+                        <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2">
                         <template v-for="(time, index) in this.carouselNewsTime" :key="index">
                             <span v-if="index === this.activeIndex" class="me-2"> {{ time }} </span>
                         </template>
@@ -46,8 +60,8 @@ export default{
                 
             </div>
             <div>
-                <font-awesome-icon icon="fa-solid fa-angle-left" />
-                <font-awesome-icon icon="fa-solid fa-angle-right" class="ms-4"/>
+                <font-awesome-icon icon="fa-solid fa-angle-left" class="carousel-icon" @click="prevNews()"/>
+                <font-awesome-icon icon="fa-solid fa-angle-right" class="carousel-icon ms-4" @click="nextNews()"/>
             </div>
         </div>
     </section>
@@ -63,6 +77,15 @@ export default{
 
 .news-head {
     background-color: $my_bg-darkgrey;
+}
+
+img {
+    width: 50px;
+    object-fit: cover;
+}
+
+.carousel-icon {
+    cursor: pointer;
 }
 
 </style>
