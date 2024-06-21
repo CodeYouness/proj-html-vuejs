@@ -26,7 +26,7 @@ export default {
                     <HeaderSmallCarousel />
                 </div>
                 <div class="col-3 m-0 ">
-                    <ul class="nav justify-content-end">
+                    <ul class="nav justify-content-end align-items-center h-100">
                         <li class="nav-item ">
                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         </li>
