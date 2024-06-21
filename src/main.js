@@ -11,7 +11,14 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 
-library.add(faFacebookF, faStar, faUser, faCalendarDays)
+
+import { faCopyright } from '@fortawesome/free-regular-svg-icons'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlay } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faFacebookF, faStar, faUser, faCalendarDays, faPlay, faCopyright, faCaretDown)
+
+
 
 createApp(App)
     .component('font-awesome-icon', FontAwesomeIcon)
