@@ -48,7 +48,7 @@ export default {
 <template>
 <div class="d-flex align-items-center bg-light p-4">
         <div class="container">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between mb-3">
                 <h3 class="text-uppercase fw-bold">featured posts</h3>
                 <div>
                     <button @click="forwardPicCarousel" class="left fw-bolder px-3 py-2 border-0 me-3"><</button>
@@ -95,7 +95,7 @@ img {
 }
 
 .custom-card {
-    width: calc(25% - 1rem);
+    width: calc(100% / 3 - 1rem);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
