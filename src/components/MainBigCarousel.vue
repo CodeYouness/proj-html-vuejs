@@ -92,7 +92,7 @@ img {
 }
 
 .custom-card {
-    width: calc(100% / 3 - 0.5rem);
+    width: calc(100% / 3 - 0.4rem);
     transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
