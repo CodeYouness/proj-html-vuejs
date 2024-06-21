@@ -17,8 +17,9 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faFacebookF, faStar, faUser, faCalendarDays, faPlay, faCopyright, faCaretDown, faAngleRight, faAngleLeft);
+library.add(faFacebookF, faStar, faUser, faCalendarDays, faPlay, faCopyright, faCaretDown, faAngleRight, faAngleLeft, faCaretRight);
 
 
 

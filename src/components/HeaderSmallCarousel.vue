@@ -68,12 +68,15 @@ export default{
     <section id="header-carousel" class="container-fluid">
         <div class="d-flex align-items-center justify-content-between text-uppercase text-white h-100">
             <div class="d-flex align-items-center h-100">
-                <div class="news-head d-flex align-items-center h-100 fw-bold px-3">
+                <div class="news-head d-flex align-items-center h-100 fw-bold px-3 position-relative z-1">
                     <p class="mb-0" >news update</p>
                 </div>
                 <template v-for="(news, index) in this.carouselNews" :key="news.id">
                     <div class="news-body d-flex align-items-center h-100" v-if="index === this.activeIndex">
-                        <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2">
+                        <div class="h-100 position-relative">
+                            <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2 fade-in-image">
+                            <font-awesome-icon class="image-icon position-absolute" icon="fa-solid fa-caret-right" />
+                        </div>
                         <div class="d-flex align-items-center">
                             <template v-for="(time, index) in this.carouselNewsTime" :key="index">
                                 <span v-if="index === this.activeIndex" class="me-2"> {{ time }} </span>
@@ -104,6 +107,14 @@ export default{
     background-color: $my_bg-darkgrey;
 }
 
+.image-icon {
+    color: $primary-color;
+    height: 100%;
+    font-size: 1rem;
+    right: 85%;
+    overflow: clip;
+}
+
 img {
     width: 50px;
     object-fit: cover;
@@ -129,5 +140,14 @@ img {
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
+}
+
+.fade-in-image {
+    animation: fadeIn .75s; 
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 </style>
