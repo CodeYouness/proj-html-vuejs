@@ -5,7 +5,7 @@ export const store = reactive({
         {
             "id": 1,
             "category": ["Food"],
-            "title": "Hygenic Receuoe To Prepare Rice ",
+            "title": "Hygenic Receipe To Prepare Rice ",
             "author": "demo",
             "date": "December 26 , 2022",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim libero sint atque assumenda consectetur eaque tenetur ipsum, magnam maiores excepturi exercitationem numquam cum. Adipisci itaque perspiciatis, ab magnam officia eos.",

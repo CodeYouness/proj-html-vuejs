@@ -146,7 +146,7 @@ export default{
 
     label {
         display: inline-block;
-        background-color: #545454;
+        background-color: $my_bg-darkgrey;
         border-radius: 4px;
         color: white;
         margin-left: 1.2rem;
@@ -210,7 +210,7 @@ export default{
                 padding-left: .7rem;
 
                 p:first-child{
-                    color: #545454;
+                    color: $my_bg-darkgrey;
                 }
 
                 p> span{
@@ -262,7 +262,7 @@ export default{
     width: 40px;
     aspect-ratio: 1;
     border-radius: 50%;
-    border: 4px solid #545454;
+    border: 4px solid $my_bg-darkgrey;
     border-right-color: black;
     animation: l2 1s infinite linear;
 }

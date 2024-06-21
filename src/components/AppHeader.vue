@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store";
 import NavComponent from "../components/NavComponent.vue";
+import HeaderSmallCarousel from './HeaderSmallCarousel.vue'
 export default {
     data() {
         return {
@@ -8,7 +9,8 @@ export default {
         }
     },
     components: {
-        NavComponent
+        NavComponent,
+        HeaderSmallCarousel
     }
 }
 </script>
@@ -18,8 +20,8 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col-9 m-0 d-flex align-middle ">
-                    <h1 class="mb-0 p-2 pt-3">news updates</h1>
-                    <h2 class="">carousel</h2>
+                    <HeaderSmallCarousel />
+                    
                 </div>
                 <div class="col-3 m-0 ">
                     <ul class="nav justify-content-end">
