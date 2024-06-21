@@ -7,6 +7,8 @@ export default {
             store,
             currentIndex: 3,
             backwardIndex: store.apiList.length - 1,
+            isAutoScrollActive: false,
+            carouselClock: null
         }
     },
     props: {
@@ -37,10 +39,22 @@ export default {
             let clearedString = string.split(" ")
             clearedString.splice(clearedString.indexOf('convention'), 1)
             return clearedString
+        },
+        startCarouselClock: function (){
+            if(this.isAutoScrollActive === false){
+                this.carouselClock = setInterval(this.nextPicCarousel, 5000);
+                this.isAutoScrollActive = true; 
+            }
+        },
+        stopCarouselClock: function (){
+            if(this.isAutoScrollActive === true){
+                clearInterval(this.carouselClock);
+                this.isAutoScrollActive = false; 
+            }
         }
     },
     mounted() {
-        setInterval(this.nextPicCarousel, 10000)
+        this.startCarouselClock()
     }
 }
 </script>
@@ -55,7 +69,7 @@ export default {
                     <button @click="nextPicCarousel" class="rounded-circle fw-bolder px-3 py-2 border-0 btn-color">></button>
                 </div>
             </div>
-            <div class="d-flex justify-content-between position-relative">
+            <div class="d-flex justify-content-between position-relative" @mouseover="stopCarouselClock()" @mouseleave="startCarouselClock()">
 
                 <div v-for="(pic,index) in newArray" :key="index" class="custom-card card border-0">
 
