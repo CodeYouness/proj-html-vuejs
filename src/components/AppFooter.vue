@@ -187,13 +187,6 @@ export default {
         background-color: #545454;
         padding: 0.5rem 1.5rem;
         border-radius: 5px;
-        color: white;
-
-        &:hover {
-            background-color: white;
-            color: $primary-color;
-            transition: 500ms;
-        }
     }
 
 
@@ -210,12 +203,6 @@ export default {
 
         a {
             text-decoration: none;
-             color: white;
-        }
-
-        a:hover {
-            color: #545454;
-            transition: 200ms;
         }
   
     }
