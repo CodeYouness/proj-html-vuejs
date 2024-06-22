@@ -95,7 +95,7 @@ export default{
 @use '../styles/partials/variable' as *;
 
 #header-carousel {
-    height: 50px;
+    height: 40px;
 }
 
 .news-head {
