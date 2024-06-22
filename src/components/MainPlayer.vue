@@ -7,62 +7,62 @@ export default {
                 {
                     "id": 0,
                     "url": "https://www.youtube.com/embed/r8eQDtOnUsY?si=iZQc1p_vPALSVHcY",
-                    "active": true,
+                    "active": false,
                     "title": "「Never Break Down」リリックビデオ",
                     "thumbnail": "https://img.youtube.com/vi/r8eQDtOnUsY/0.jpg"
                 },
                 {
                     "id": 1,
                     "url": "https://www.youtube.com/embed/NnIjerAON8o?si=afwDhQyhn0T61b9T",
-                    "active": true,
+                    "active": false,
                     "title": "『 Frieren: Beyond Journey's End 』Epic OST",
                     "thumbnail": "https://img.youtube.com/vi/NnIjerAON8o/0.jpg"
                 },
                 {
                     "id": 2,
                     "url": "https://www.youtube.com/embed/quedt2IB9_Q?si=FtFsRtCuY6LutBQx",
-                    "active": true,
+                    "active": false,
                     "title": " Frieren vs Frieren | Frieren: Beyond Journey's End ",
                     "thumbnail": "https://img.youtube.com/vi/quedt2IB9_Q/0.jpg"
                 },
                 {
                     "id": 3,
                     "url": "https://www.youtube.com/embed/J3kytewub_Y?si=p9Oja7SlXGBV5dc8",
-                    "active": true,
+                    "active": false,
                     "title": "Tengen Toppa Gurren Lagann Movie: Lagann-hen.",
                     "thumbnail": "https://img.youtube.com/vi/J3kytewub_Y/0.jpg"
                 },
                 {
                     "id": 4,
                     "url": "https://www.youtube.com/embed/-Djq3QihTyA?si=KvL05CpXegn86QWf",
-                    "active": true,
+                    "active": false,
                     "title": " You have no enemies.",
                     "thumbnail": "https://img.youtube.com/vi/-Djq3QihTyA/0.jpg"
                 },
                 {
                     "id": 5,
                     "url": "https://www.youtube.com/embed/i-L0Gs2whvc?si=l0W5h-d_jatBm0Pq",
-                    "active": true,
+                    "active": false,
                     "title": " Dio VS Jotaro",
                     "thumbnail": "https://img.youtube.com/vi/i-L0Gs2whvc/0.jpg"
                 },
                 {
                     "id": 6,
                     "url": "https://www.youtube.com/embed/itKq_Qg-MHM?si=dMI4obUM4FjrUqqK",
-                    "active": true,
+                    "active": false,
                     "title": " Eren Transform",
                     "thumbnail": "https://img.youtube.com/vi/itKq_Qg-MHM/0.jpg"
                 },
                 {
                     "id": 7,
                     "url": "https://www.youtube.com/embed/dFlDRhvM4L0?si=TUS6jG3ilK_zD98H",
-                    "active": true,
+                    "active": false,
                     "title": " CHAINSAW MAN Opening│米津玄師 「KICK BACK」",
                     "thumbnail": "https://img.youtube.com/vi/dFlDRhvM4L0/0.jpg"
                 },
             ],
             currentVideo: 'https://www.youtube.com/embed/r8eQDtOnUsY?si=iZQc1p_vPALSVHcY',
-            currentIndex: 0
+            currentIndex: 0,
         }
     },
     methods: {
@@ -70,13 +70,16 @@ export default {
             this.currentVideo = this.listLink[index].url;
             this.currentIndex = index;
         },
+        activeVideo(index){
+            this.listLink[index].active = !this.listLink[index].active ; 
+        }
     }
 }
 </script>
 
 <template>
-    <section class="d-flex container p-0 ">
-            <div class="w-75 ">
+    <section class="d-flex container p-0 " >
+            <div class="w-75 " >
                 <iframe :src="currentVideo" title="YouTube video player" frameborder="0" class="rounded-start-2"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -91,10 +94,11 @@ export default {
                         <h2 class="fs-6"> {{ currentIndex + 1 }}/{{ listLink.length }} Video</h2>
                     </div>
                 </div>
-                <div class="main overflow-y-auto rounded-end-2 ">
-                    <div class="d-flex border videos-list align-items-center p-1" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index)">
+                <div class="main overflow-y-auto rounded-end-2 "  >
+                    <div class="d-flex border videos-list align-items-center p-1" v-for="(link, index) in listLink" :key="link.id" @click="playVideo(index) , activeVideo(index)">
                         <div class=" d-flex align-items-center justify-content-center index-wrapper">
-                            <p class=" mx-2 index-video text-white">{{ index }}</p>
+                            <p  class=" mx-2 index-video text-white" :class="{ inactive : this.listLink[index].active}"  >{{ index }}</p>
+                            <p> <font-awesome-icon :icon="['fas', 'play']" class="mx-2 index-video text-white inactive" :class="{ active : this.listLink[index].active}"/> </p>
                         </div>
                         <div class="d-flex align-items-center justify-content-center">
                             <img :src="link.thumbnail" alt="Thumbnail">
@@ -162,4 +166,12 @@ img {
     padding-top: 10px;
     
 }
+.inactive{
+    display: none;
+}
+.active{
+    display: block;
+
+}
+
 </style>
