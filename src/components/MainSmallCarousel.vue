@@ -77,7 +77,7 @@ export default {
                             {{ pic.event_name }}
                         </a>
                         <p class="card-text m-0">{{ pic.location }}</p>
-                        <p class="card-text m-0">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
+                        <p class="card-text text-secondary m-0">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
                     </div>
 
                 </div>
