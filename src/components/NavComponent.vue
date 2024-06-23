@@ -31,21 +31,22 @@ export default {
                             <span class="navbar-toggler-icon"></span>
                             </button>
                             <div 
-                                class="offcanvas m-0 d-flex justify-content-center  canvas-width offcanvas-start "
+                                class="offcanvas m-0 d-flex justify-content-center  canvas-width offcanvas-start first-position"
                                 tabindex="-1"
                                 id="offcanvasDarkNavbar"
                                 aria-labelledby="offcanvasDarkNavbarLabel"
                                 >
-                                <div class="offcanvas-header my-5 justify-content-center first-position">
+                                <!-- button close -->
+                                <button
+                                type="button"
+                                class="btn-close m-0"
+                                data-bs-dismiss="offcanvas"
+                                aria-label="Close"
+                                ></button>
+                                <div class="offcanvas-header my-5 justify-content-center">
                                     <div class="text-center">
                                     <img  class="offcanvas-title" id="offcanvasDarkNavbarLabel" src="../assets/anime-logo.webp" alt="mainLogo">
                                     </div>
-                                    <button
-                                    type="button"
-                                    class="btn-close m-0"
-                                    data-bs-dismiss="offcanvas"
-                                    aria-label="Close"
-                                    ></button>
                                 </div>
                                 <div class="offcanvas-body  justify-content-center align-middle">
                                     <ul class="navbar-nav pe-3">
@@ -318,15 +319,14 @@ ul.zocial li a{
 }
 
 .first-position {
-    position: relative;
 
     .btn-close {
         position: absolute;
         border: 3px solid black;
         border-radius: 0;
         font-size: 20px;
-        bottom: 120px;
-        left: 575px;
+        left: 100%;
+        top: 0;
         background-color: $my_bg-darkgrey;
         opacity: 1;
 
