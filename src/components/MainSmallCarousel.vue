@@ -123,6 +123,7 @@ img {
 .custom-card {
     width: calc(25% - 1rem);
     transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
 }
 
 button {

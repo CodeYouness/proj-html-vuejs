@@ -26,14 +26,14 @@ export default {
             this.newArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
             this.backwardIndex = (this.currentIndex - 3 + this.store.apiList.length ) % this.store.apiList.length;
-            console.log(this.currentArray)
+            // console.log(this.currentArray)
         },
         forwardPicCarousel(){
             this.newArray.pop();
             this.newArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
             this.currentIndex = (this.backwardIndex + 3) % this.store.apiList.length;
-            console.log(this.currentArray)
+            // console.log(this.currentArray)
         },
         getClearedString(string){
             let clearedString = string.split(" ")
@@ -108,6 +108,7 @@ img {
 .custom-card {
     width: calc(100% / 3 - 0.4rem);
     transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
 }
 
 a {

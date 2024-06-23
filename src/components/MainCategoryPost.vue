@@ -77,6 +77,7 @@ export default {
 
 .cards{
     height: 230px;
+    cursor: pointer;
 }
 
 img{

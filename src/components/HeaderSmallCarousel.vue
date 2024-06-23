@@ -69,7 +69,7 @@ export default{
                 <template v-for="(news, index) in this.carouselNews" :key="news.id">
                     <div class="news-body d-flex align-items-center h-100" v-if="index === this.activeIndex">
                         <div class="h-100 position-relative">
-                            <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2 fade-in-image">
+                            <img :src="getImagePath(news.path)" :alt="news.title" class="h-100 me-2 fade-in-image" :title="news.title">
                             <font-awesome-icon class="image-icon position-absolute" icon="fa-solid fa-caret-right" />
                         </div>
                         <div class="d-flex align-items-center" @mouseover="stopCarouselClock()" @mouseleave="startCarouselClock()">
@@ -95,7 +95,7 @@ export default{
 @use '../styles/partials/variable' as *;
 
 #header-carousel {
-    height: 50px;
+    height: 40px;
 }
 
 .news-head {
