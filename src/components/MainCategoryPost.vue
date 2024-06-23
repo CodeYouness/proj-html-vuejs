@@ -83,6 +83,7 @@ img{
     width: 100%;
     object-fit: cover;
 }
+
 span{
     color: white;
     text-transform: uppercase;
@@ -90,8 +91,8 @@ span{
     font-size: 24px;
 }
 div.overlay {
-        background-color: rgba(0, 0, 0, 0.3);
-    }
+    background-color: rgba(0, 0, 0, 0.3);
+}
 .centered {
     position: absolute;
     top: 40%;
