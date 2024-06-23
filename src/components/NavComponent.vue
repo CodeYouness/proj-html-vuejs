@@ -21,7 +21,7 @@ export default {
                     <nav class="navbar">
                         <div class="container-fluid ">
                             <button
-                            class="navbar-toggler"
+                            class="navbar-toggler border-0"
                             type="button"
                             data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasDarkNavbar"
@@ -49,7 +49,7 @@ export default {
                                     </div>
                                 </div>
                                 <div class="offcanvas-body  justify-content-center align-middle">
-                                    <ul class="navbar-nav pe-3">
+                                    <ul class="navbar-nav">
                                         <li class="nav-item">
                                             <a class="nav-link text-center" aria-current="page" href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate hic amet nesciunt officiis, repudiandae doloribus </a>
                                         </li>
@@ -59,18 +59,18 @@ export default {
                                             <a class="nav-link" href="#"><img src="../assets/anime-fashion.webp" alt="img"></a>
                                         </li>
                                     </ul>
-                                    <ul class="navbar-nav   pe-3 my-3">
+                                    <ul class="navbar-nav my-3">
                                         <li class="nav-item d-flex justify-content-center my-2">
-                                            <i class="fa-solid fa-clock px-2"></i><span> Sun - Sat: 9:00 AM - 18:00 PM</span>
+                                            <i class="fa-solid fa-clock pe-2"></i><span> Sun - Sat: 9:00 AM - 18:00 PM</span>
                                         </li>
                                         <li class="nav-item d-flex justify-content-center my-2">
-                                            <i class="fa-solid fa-envelope px-2"></i><span>contact@domain.com</span>
+                                            <i class="fa-solid fa-envelope pe-2"></i><span>contact@domain.com</span>
                                         </li>
                                         <li class="nav-item d-flex justify-content-center my-2">
-                                            <i class="fa-solid fa-phone-volume px-2"></i><span>(+82)8123 456 789</span>
+                                            <i class="fa-solid fa-phone-volume pe-2"></i><span>(+82)8123 456 789</span>
                                         </li>
                                     </ul>
-                                    <ul class="nav d-flex justify-content-center  zocial">
+                                    <ul class="nav d-flex justify-content-center zocial">
                                         <li class="nav-item ">
                                             <a class="nav-link rounded-circle" href="#"><i class="fa-brands fa-facebook-f"></i></a>
                                         </li>
@@ -315,30 +315,25 @@ ul.zocial li a{
 
 .zocial a:hover{
     background-color:$background-color;
-
 }
 
-.first-position {
-
-    .btn-close {
-        position: absolute;
-        border: 3px solid black;
-        border-radius: 0;
-        font-size: 20px;
-        left: 100%;
-        top: 0;
-        background-color: $my_bg-darkgrey;
-        opacity: 1;
-
-        &:hover {
-           background-color: $primary-color;
-           border-color: white;
-           transition: .3s;
-        }
+.btn-close {
+    position: absolute;
+    border: 3px solid black;
+    border-radius: 0;
+    font-size: 20px;
+    left: 100%;
+    top: 0;
+    background-color: $my_bg-darkgrey;
+    opacity: 1;
+    &:hover {
+        background-color: $primary-color;
+        border-color: white;
+        transition: .3s;
     }
 }
 
 .canvas-width {
-    width: 30% !important;
+    width: 40% !important;
 }
 </style>
