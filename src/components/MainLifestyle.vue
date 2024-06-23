@@ -80,7 +80,7 @@ export default{
                     <h3 class="fw-bold fs-4 mb-0">Lifestyle & stories</h3>
                 </div>
                 <div class="col-4 d-flex align-items-center justify-content-end">
-                    <input type="radio" name="category-tag" id="tag-all" value="all" @click="changeValue('all')">
+                    <input type="radio" name="category-tag" id="tag-all" value="all" @click="changeValue('all')" checked>
                     <label for="tag-all">All</label>
                     <input type="radio" name="category-tag" id="tag-lifestyle" value="lifestyle" @click="changeValue('lifestyle')">
                     <label for="tag-lifestyle">Lifestyle</label>
@@ -134,8 +134,6 @@ export default{
 
     article {
         cursor: pointer;
-        // animation-name: moveUpwards;
-        // animation-duration: 2s;
     }
 
     input[type="radio"] {
@@ -267,9 +265,4 @@ export default{
     animation: l2 1s infinite linear;
 }
 @keyframes l2 {to{transform: rotate(1turn)}}
-
-@keyframes moveUpwards {
-    from {margin-top: 35px}
-    to {margin-top: 0}
-}
 </style>
