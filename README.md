@@ -32,20 +32,20 @@
 ### Struttura del progetto
 
 .
-|- public
-|
-|- src
-|   |-Assets
-|   |   |-- [Immagini]
-|   |-Components
-|   |   |-- [Componenti]
-|   |-Styles
-|   |   |-  [General.scss]
-|   |   |- partials
-|   |       |- [Variabili]
-|   |-[App.vue]
-|   |-[Main.js]
-|   |-[Store.js]
-|- [index.html]
-|- [Readme.md]
-|- [.gitignore]
+├── public
+│   └── [index.html]
+├── src
+│   ├── Assets
+│   │   └── [Immagini]
+│   ├── Components
+│   │   └── [Componenti]
+│   ├── Styles
+│   │   ├── [General.scss]
+│   │   └── partials
+│   │       └── [Variabili]
+│   ├── [App.vue]
+│   ├── [Main.js]
+│   └── [Store.js]
+├── [Readme.md]
+└── [.gitignore]
+
