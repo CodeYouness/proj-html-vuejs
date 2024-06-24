@@ -31,18 +31,18 @@
 
 ### Struttura lavorativa del progetto
 
-.
+.  
 ├── public  
-│   └── [index.html]
+│   └── [index.html]  
 ├── src  
 │   ├── Assets  
-│   │   └── [Immagini]
+│   │   └── [Immagini]  
 │   ├── Components  
-│   │   └── [Componenti]
+│   │   └── [Componenti]  
 │   ├── Styles  
-│   │   ├── [General.scss]
+│   │   ├── [General.scss]  
 │   │   └── partials  
-│   │       └── [Variabili]
+│   │       └── [Variabili]  
 │   ├── [App.vue]  
 │   ├── [Main.js]  
 │   └── [Store.js]  
