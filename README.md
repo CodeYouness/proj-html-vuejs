@@ -32,7 +32,7 @@
 ### Struttura lavorativa del progetto
 
 .
-├── public
+├── public \\
 │   └── [index.html]
 ├── src
 │   ├── Assets
@@ -56,7 +56,7 @@
             ├──[Caroselli](https://github.com/CodeYouness/proj-html-vuejs/tree/3-mainsmallcarousel)-> [Youness lijassi](https://github.com/CodeYouness)
             ├──[Post suggeriti](https://github.com/CodeYouness/proj-html-vuejs/tree/4-mainjumbotron)-> [Carla Lazzari](https://github.com/lazzaric92)
             └──[Player e card statiche](https://github.com/CodeYouness/proj-html-vuejs/tree/6-mainplayer)-> [Marco Pensabene](https://github.com/MarcoMpensabene)
-        - [Footer](https://github.com/CodeYouness/proj-html-vuejs/tree/2-work-on-footer-component)-> [Lorenzo Paris]()
+        - [Footer](https://github.com/CodeYouness/proj-html-vuejs/tree/2-work-on-footer-component)-> [Lorenzo Paris](https://github.com/LorenzoParis1996)
 
 - Ogni persona del team aveva a disposizione un proprio componente, con degli obiettivi già prefissati, in modo tale che ognuno potesse concentrarsi sul proprio lavoro, i propri problemi e dunque lavorare in focus
 
@@ -70,6 +70,7 @@
 
 ## Main
 ### Branch: 3-mainsmallcarousel di [Youness lijassi](https://github.com/CodeYouness)
+- 
 
 
 ### Branch: 4-mainjumbotron di [Carla Lazzari](https://github.com/lazzaric92)
@@ -92,4 +93,9 @@ Per l'implementazione del player ho scelto di utilizzare la funzionalità condiv
     - funzionalità di base (cambio del video principale cliccando sull'elemento della playlist) direttamente in js
         - Funzionalità gestita creando una piccola funzione js che ha come argomento l'index dell'array e all'interno una     semplice assegnazione per gestire l'url corrente con un altro di indice diverso ed infine la funzione viene chiamata     tramite l'evento di @click tramite vue3 nell'elemento html.
 
-### Branch: 2-work-on-footer-component di 
+### Branch: 2-work-on-footer-component di [Lorenzo Paris](https://github.com/LorenzoParis1996)
+- Per la componente del footer ho creato nello script un array di oggetti che: 
+    - una volta stilizzato il contenitore del componente, avrei richiamato con un v-for in modo da avere i dati renderizzati in pagina e ricreare le liste facenti da link.
+- Successivamente mi sono occupato di aggiungere l'input col bottone,la linea separante e il logo e testo di copyright. 
+- Una volta popolato il container con tutto il contenuto, mi sono occupato dei micro dettagli come gli hover sui link per richiamare il fatto che fosse un elemento cliccabile e il bottone, in modo da ricreare il piu' fedelmente possibile come dal sito demo.
+- Infine, ho creato un metodo per simulare, al click del bottone, l'apparizione di un messaggio
