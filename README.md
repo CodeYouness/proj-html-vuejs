@@ -56,8 +56,40 @@
             ├──[Caroselli](https://github.com/CodeYouness/proj-html-vuejs/tree/3-mainsmallcarousel)-> [Youness lijassi](https://github.com/CodeYouness)
             ├──[Post suggeriti](https://github.com/CodeYouness/proj-html-vuejs/tree/4-mainjumbotron)-> [Carla Lazzari](https://github.com/lazzaric92)
             └──[Player e card statiche](https://github.com/CodeYouness/proj-html-vuejs/tree/6-mainplayer)-> [Marco Pensabene](https://github.com/MarcoMpensabene)
-        - [Footer](https://github.com/CodeYouness/proj-html-vuejs/tree/2-work-on-footer-component)
+        - [Footer](https://github.com/CodeYouness/proj-html-vuejs/tree/2-work-on-footer-component)-> [Lorenzo Paris]()
 
-- Ogni persona del team aveva a disposizione un proprio componente, con degli obiettivi già prefissati
+- Ogni persona del team aveva a disposizione un proprio componente, con degli obiettivi già prefissati, in modo tale che ognuno potesse concentrarsi sul proprio lavoro, i propri problemi e dunque lavorare in focus
 
-### 
+## [Header](https://github.com/CodeYouness/proj-html-vuejs/tree/1-work-on-header-component)
+### Branch: 1-work-on-header-component di [Marco Saccone](https://github.com/MarcoSac1)
+- dopo un analisi della pagina ho iniziato a lavorare per step andando a determinare le varie sezioni che compongono l'header al suo interno troviamo:
+    - Un component dedicato al [carosello](./src/components/HeaderSmallCarousel.vue) fatto da [Carla Lazzari](https://github.com/lazzaric92)
+    - la section dedicata al banner e al logo principale
+    - Un component dedicato alla nav-bar che contiene anche un Hamburger menù dedicato all'apertura dell'offcanvas
+- Tutti gli elementi clicccabili di questo componente hanno l'hover per richiamare questa funzionalità
+
+## Main
+### Branch: 3-mainsmallcarousel di [Youness lijassi](https://github.com/CodeYouness)
+
+
+### Branch: 4-mainjumbotron di [Carla Lazzari](https://github.com/lazzaric92)
+- Nella sezione delle notizie di tendenza i post vengono filtrati tramite id e, sempre tramite id, si sceglie quale post avrà rilevanza maggiore e occuperà la porzione centrale.
+- Ogni post è corredato di:
+    - immagine
+    - titolo
+    - nome dell'autore
+    - data
+    - categorie di appartenenza (gli articoli sono popolati dinamicamente).
+- Nella sezione successiva ci sono i post delle categorie lifestyle e stories: cliccando sui bottoni l'array in store.js viene filtrato, dall'array filtrato 4 oggetti randomici vengono inseriti nell'array degli elementi da mostrare in pagina  (ovviamente solo nel caso in cui l'array filtrato abbia lunghezza maggiore o uguale a 4, in caso contrario l'array filtrato e l'array degli elementi da mostrare in pagina coincideranno). 
+
+### Branch: 6-mainplayer di [Marco Pensabene](https://github.com/MarcoMpensabene)
+Per l'implementazione del player ho scelto di utilizzare la funzionalità condividi fornita da youtube per incorporare il video direttamente nella pagina per poi gestire a mano la parte della playlist.
+- La playlist è stata gestita:
+    - parte grafica tramite scss/css/boostrap
+        - utilizzo di boostrap per il wrapper principale , utilizzo di scss per i dettagli come hover e dimensioni
+    - gestione dei dati tramite Vue 3 
+        - costruzione di un array di oggetti che tramite un v-for riempie gli elementi dell'html dinamicamente
+    - funzionalità di base (cambio del video principale cliccando sull'elemento della playlist) direttamente in js
+        - Funzionalità gestita creando una piccola funzione js che ha come argomento l'index dell'array e all'interno una     semplice assegnazione per gestire l'url corrente con un altro di indice diverso ed infine la funzione viene chiamata     tramite l'evento di @click tramite vue3 nell'elemento html.
+
+### Branch: 2-work-on-footer-component di 
