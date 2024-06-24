@@ -20,6 +20,7 @@
         1. Card
         2. Badge in overlay sulle card
         3. Bottone 
+        4. NavBar
     - Applicare misure e stili predefiniti
     - Utilizzare script pronti per:
         1. Menù a tendina
@@ -27,3 +28,24 @@
 - [Axios](https://www.npmjs.com/package/axios)
     - Necessario per eseguire la chiamata API
 - [Sass](https://www.npmjs.com/package/sass)
+
+### Struttura del progetto
+
+.
+|- public
+|
+|- src
+|   |-Assets
+|   |   |-- [Immagini]
+|   |-Components
+|   |   |-- [Componenti]
+|   |-Styles
+|   |   |-  [General.scss]
+|   |   |- partials
+|   |       |- [Variabili]
+|   |-[App.vue]
+|   |-[Main.js]
+|   |-[Store.js]
+|- [index.html]
+|- [Readme.md]
+|- [.gitignore]
