@@ -32,22 +32,22 @@
 ### Struttura lavorativa del progetto
 
 .
-├── public \\
+├── public  
 │   └── [index.html]
-├── src
-│   ├── Assets
+├── src  
+│   ├── Assets  
 │   │   └── [Immagini]
-│   ├── Components
+│   ├── Components  
 │   │   └── [Componenti]
-│   ├── Styles
+│   ├── Styles  
 │   │   ├── [General.scss]
-│   │   └── partials
+│   │   └── partials  
 │   │       └── [Variabili]
-│   ├── [App.vue]
-│   ├── [Main.js]
-│   └── [Store.js]
-├── [Readme.md]
-└── [.gitignore]
+│   ├── [App.vue]  
+│   ├── [Main.js]  
+│   └── [Store.js]  
+├── [Readme.md]  
+└── [.gitignore]  
 
 - Lo scaffholding di base è stato fatto direttamente in Main, questo per poi aprire dei brench "Ready&Go"
     -  * I branch erano divisi in: 
