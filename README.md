@@ -70,8 +70,23 @@
 
 ## Main
 ### Branch: 3-mainsmallcarousel di [Youness lijassi](https://github.com/CodeYouness)
-- Il punto principale del carosello era quello di rendere la funzione il più compatibile possibile con il diverso numero di oggetti presenti nel carosello, la funziona quindi si svolge in questo modo:
-    1. 
+- Il punto principale del carosello era quello di rendere la funzione il più compatibile possibile con il diverso numero di oggetti presenti nel carosello, la struttura quindi si svolge in questo modo:
+    1. In AppMain si svolge la chiamata all'API che riempie in store.js un array denominato apiList
+        - nello stesso component è presente la funzione che riempie un array nuovo con il numero di oggetti necessari per il carosello (3 per il carosello inferiore e 4 per il carosello superiore), questo perchè era necessario che la funzione di riempimento dell'array dedicato al carosello venisse richiamato nella stessa funzione della chiamata API ALTRIMENTI la risposta alla chiamata api arrivava successivamente alla chiamata della funzione di riempimento dell' array, cio comportava il fatto di trovarsi con un array vuoto e dunque senza carosello
+        - tramite props avveniva il passaggio dell'array utile al carosello
+    2. In MainSmallCarousel arrivava la props con gli oggetti, da qui con un v-for si aveva il numero di card necessari all'interno del carosello
+        - la funzione di avanzamento del carosello funziona cosi:
+            1. elimina l oggetto 0 dell array
+            2. aggiunge nell ultima posizione l oggetto al numero di una variabile
+            3. aggiorna la variabile del numero dell oggetto (aggiunge 1 al numero e ritorna a 0 nel momento in cui arrivi al massimo)
+            4. aggiorna la variabile dedicata allo scorrimento all indiettro (dalla variabile opposta tolgo 4 e aggiungo la lunghezza dell array in store, e ritorno a 0 nel momento in cui arrivi al massimo)
+        - la funzione di scorrimento all indietro invece:
+            1. elimina l oggetto all ultima posizione dell array 
+            2. aggiunge alla posizione 0 (facendo scorrere alla posizione successiva gli altri oggetti)
+            3. aggiorna la variabile dell'oggeto da includere (facendo -1 al numero iniziale e aggiungendo la lunghezza totale)
+            4. aggiorna la variabile dedicata all avanzamento
+    3. Lo scorrimento avviene con un timer di 5 secondi che però si interrompe quando ci si va sopra con il mouse
+    4. L'ultima funzione è dedicata alla selezione del tipo di evento per i badge presenti in overlay sull immagine delle card, la funzione rimuove la dicitura "convention" (che non è una tipologia ma specifica solo la macro categoria) e suddivide ogni parola, dunque se una convention avesse 3 categorie (oltre alla dicitura convention), nell immagine si presenterebbero 3 badge con le 3 categorie diverse
 
 
 ### Branch: 4-mainjumbotron di [Carla Lazzari](https://github.com/lazzaric92)
