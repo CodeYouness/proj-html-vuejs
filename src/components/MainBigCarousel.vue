@@ -26,14 +26,12 @@ export default {
             this.newArray.push(this.store.apiList[this.currentIndex]);
             this.currentIndex = (this.currentIndex + 1) % this.store.apiList.length;
             this.backwardIndex = (this.currentIndex - 3 + this.store.apiList.length ) % this.store.apiList.length;
-            // console.log(this.currentArray)
         },
         forwardPicCarousel(){
             this.newArray.pop();
             this.newArray.unshift(this.store.apiList[this.backwardIndex]);
             this.backwardIndex = (this.backwardIndex - 1 + this.store.apiList.length) % this.store.apiList.length;
             this.currentIndex = (this.backwardIndex + 3) % this.store.apiList.length;
-            // console.log(this.currentArray)
         },
         getClearedString(string){
             let clearedString = string.split(" ")
@@ -84,7 +82,7 @@ export default {
                         <a class="card-text fw-bolder m-0">
                             {{ pic.event_name }}
                         </a>
-                        <p class="card-text">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
+                        <p class="card-text text-secondary">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim numquam...</p>
                         <button type="button" class="btn btn-danger rounded-pill px-5">Read more</button>
                     </div>
