@@ -29,7 +29,7 @@
     - Necessario per eseguire la chiamata API
 - [Sass](https://www.npmjs.com/package/sass)
 
-### Struttura del progetto
+### Struttura lavorativa del progetto
 
 .
 ├── public
@@ -49,3 +49,15 @@
 ├── [Readme.md]
 └── [.gitignore]
 
+- Lo scaffholding di base è stato fatto direttamente in Main, questo per poi aprire dei brench "Ready&Go"
+    -  * I branch erano divisi in: 
+        - [Header](https://github.com/CodeYouness/proj-html-vuejs/tree/1-work-on-header-component) -> [Marco Saccone](https://github.com/MarcoSac1)
+        - Main 
+            ├──[Caroselli](https://github.com/CodeYouness/proj-html-vuejs/tree/3-mainsmallcarousel)-> [Youness lijassi](https://github.com/CodeYouness)
+            ├──[Post suggeriti](https://github.com/CodeYouness/proj-html-vuejs/tree/4-mainjumbotron)-> [Carla Lazzari](https://github.com/lazzaric92)
+            └──[Player e card statiche](https://github.com/CodeYouness/proj-html-vuejs/tree/6-mainplayer)-> [Marco Pensabene](https://github.com/MarcoMpensabene)
+        - [Footer](https://github.com/CodeYouness/proj-html-vuejs/tree/2-work-on-footer-component)
+
+- Ogni persona del team aveva a disposizione un proprio componente, con degli obiettivi già prefissati
+
+### 
