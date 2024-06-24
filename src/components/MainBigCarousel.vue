@@ -6,7 +6,7 @@ export default {
         return {
             store,
             currentIndex: 3,
-            backwardIndex: store.apiList.length - 1,
+            backwardIndex: 0,
             isAutoScrollActive: false,
             carouselClock: null
         }

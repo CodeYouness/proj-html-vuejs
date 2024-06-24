@@ -50,7 +50,7 @@
     └── [.gitignore]  
 
 - Lo scaffholding di base è stato fatto direttamente in Main, questo per poi aprire dei brench "Ready&Go"
-    -  * I branch erano divisi in: 
+    - * I branch erano divisi in: 
         - [Header](https://github.com/CodeYouness/proj-html-vuejs/tree/1-work-on-header-component) -> [Marco Saccone](https://github.com/MarcoSac1)
         - Main 
             ├──[Caroselli](https://github.com/CodeYouness/proj-html-vuejs/tree/3-mainsmallcarousel)-> [Youness lijassi](https://github.com/CodeYouness)
@@ -70,7 +70,8 @@
 
 ## Main
 ### Branch: 3-mainsmallcarousel di [Youness lijassi](https://github.com/CodeYouness)
-- 
+- Il punto principale del carosello era quello di rendere la funzione il più compatibile possibile con il diverso numero di oggetti presenti nel carosello, la funziona quindi si svolge in questo modo:
+    1. 
 
 
 ### Branch: 4-mainjumbotron di [Carla Lazzari](https://github.com/lazzaric92)
