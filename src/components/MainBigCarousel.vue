@@ -49,7 +49,11 @@ export default {
                 clearInterval(this.carouselClock);
                 this.isAutoScrollActive = false; 
             }
-        }
+            console.log(this.newArray)
+        },
+        getImagePath: function(img){
+            return new URL('./.' + img, import.meta.url).href;
+        },
     },
     mounted() {
         this.startCarouselClock()
@@ -71,18 +75,18 @@ export default {
 
                 <div v-for="(pic,index) in newArray" :key="index" class="custom-card card border-0">
 
-                    <img :src="pic.image" :alt="pic.id" class="card-img-top">
+                    <img :src="getImagePath(pic.path)" :alt="pic.id" class="card-img-top">
 
                     <div class="card-img-overlay text-center pt-2">
-                        <span class="badge text-bg-light me-2" v-for="(word,identificator) in getClearedString(pic.type)" :key="identificator">{{ word }}</span>
+                        <span class="badge text-bg-light me-2" v-for="(word,identificator) in pic.category" :key="identificator">{{ word }}</span>
                     </div>
                     
 
                     <div class="card-body text-center bg-light">
                         <a class="card-text fw-bolder m-0">
-                            {{ pic.event_name }}
+                            {{ pic.title }}
                         </a>
-                        <p class="card-text text-secondary">{{ pic.start_date }} &rArr; {{ pic.end_date }}</p>
+                        <p class="card-text text-secondary">{{ pic.date }}</p>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim numquam...</p>
                         <button type="button" class="btn btn-danger rounded-pill px-5">Read more</button>
                     </div>

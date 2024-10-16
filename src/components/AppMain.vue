@@ -28,18 +28,10 @@ export default {
     },
     methods:{
         getAnimeList(){
-            axios.get('http://152.89.170.170:3000/events/geek')
-            .then((response) => {
-                // handle success
-                console.log(response.data);
-                this.store.apiList = response.data;
+            this.store.apiList = this.store.animeList;
+            console.log(this.store.animeList);
                 this.getFourCard(this.store.apiList);
                 this.getThreeCard(this.store.apiList);
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
         },
         getFourCard(animeList) {
             this.currentArray = animeList.slice(0, 4);
